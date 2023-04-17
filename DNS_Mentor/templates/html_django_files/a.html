@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DNS Mentor</title>
+
+    <link rel="stylesheet" href="css/a.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+  <div class="button">
+   <a href="#" id="open_pop_up">стать ментором</a>
+  </div> 
+  
+  <div class="pop_up" id="pop_up">
+    <div class="pop_up_container">
+      <div class="pop_up_body" id="pop_up_body">
+        <p class="temp">Заполните <span class="text">анкету</span></p>
+        <p1 class="main">После отправления запроса мы его тщательно осмотрим,</p1>
+        <br>
+        <p1 class="man">  если он будет принят, вам в Telegram придёт оповещение.</p1>
+      
+        <form action="">
+          <div class="btn-group">
+            <input type="text" class="name" placeholder="Имя">
+            <input type="text" class="surname" placeholder="Фамилия">
+          </div>
+
+          <div class="btn-group">
+            <input type="text" class="telegram" placeholder="@Telegram">
+            <input type="text" class="email" placeholder="E-mail">
+          </div>
+
+          <div class="btn-group">
+            <input type="text" class="price" placeholder="цена услуги">
+            <input type="text" class="experience" placeholder="опыт работы">
+          </div>
+          
+        
+          <textarea class="field" placeholder="Сферы(через запятую)"></textarea>
+          <textarea class="about" placeholder="О себе"></textarea>
+          <p class="add">Добавьте фотографию(png, jpeg)</p>
+          
+          <input type="file" class="photo">
+          
+          
+          
+          <button>отправить</button>
+
+        </form>
+        <div class="pop_up_close" id="pop_up_close">&#10006</div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/main.js"></script>
+  </body>

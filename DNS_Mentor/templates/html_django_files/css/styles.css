@@ -1,0 +1,248 @@
+body{
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.container{
+  margin: 0px 90px;
+}
+
+/* Стили для header */
+
+.header {
+	height: 10%;
+	background-color: #fff;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.nav {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 23px;
+}
+
+
+.header_inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav_link {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 1vw;
+
+	text-decoration: none;
+
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  color: #8C8C8C;
+  text-decoration: none;
+
+  transition: color 0.1s ease-in;
+
+	
+}
+
+.nav_link:hover {
+	color: #333333;
+	font-weight: 700;
+  animation: font-weight-animation 0.1s ease-in;
+}
+
+.nav-link:active{
+  color: #FD890A;
+}
+
+/* анимация плавного увеличения жирности текста в меню при наведении */
+@keyframes font-weight-animation {
+  from {
+    font-weight: 400;
+  }
+  to {
+    font-weight: 700;
+  }
+}
+
+/*.header{
+  background-color: #fff;
+  height: 168px;
+}
+
+.header-line{
+  padding-top: 63px;
+  padding-bottom: 63px;
+
+  display: flex;
+  align-items: center;
+
+  justify-content: space-around;
+}
+
+.nav-item{
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 30px;
+  color: #8C8C8C;
+  text-decoration: none;
+
+  margin-right: 20px;
+  width: 500px;
+
+  transition: color 0.1s ease-in;
+}
+
+.nav-item:hover{
+  color: #333333;
+  animation: font-weight-animation 0.1s ease-in;
+  font-weight: 700;
+}
+
+.nav-item:active{
+  color: #FD890A;
+}
+
+@keyframes font-weight-animation {
+  from {
+    font-weight: 400;
+  }
+  to {
+    font-weight: 700;
+  }
+}
+*/
+/* Стили для introduction */
+
+.introduction{
+  height: 580px;
+  background-color: #F7F7F7;
+  padding-top: 135px;
+}
+
+.introduction-logo{
+  margin-bottom: 58px;
+  text-align: center;
+  width: 654px;
+}
+
+.introduction-desc{
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 31px;
+  text-align: center;
+  width: 654px;
+  color: #333333;
+}
+
+.introduction-desc span{
+  color: #FD890A;
+}
+
+.introduction-holder{
+  display: flex;
+  justify-content: center;
+}
+
+/* Стили для tutorial */
+
+.tutorial{
+  height: 718px;
+  background: #FFEACF;
+}
+
+.tutorial-title{
+  text-align: center;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 53px;
+  color: #333333;
+  padding-top: 40px;
+  padding-bottom: 47px;
+}
+
+.cards-holder{
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+}
+
+.tutorial-card{
+  background: #F7F7F7;
+  box-shadow: 0px 1.23485px 12.3485px rgba(0, 0, 0, 0.21);
+  border-radius: 15px;
+  width: 388px;
+}
+
+.card-image{
+  display: flex;
+  justify-content: center;
+}
+
+.card-title{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-top: 29px;
+  padding-left: 27px;
+  padding-bottom: 27px;
+}
+
+.card-number{
+  width: 41px;
+  height: 41px;
+
+  text-align: center;
+  background-color: #FD890A;
+  border-radius: 50px;
+  line-height: 41px;
+
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+
+  color: #FFFFFF;
+  
+}
+
+.card-title-text{
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 30px;
+
+  color: #333333;
+}
+
+.card-desc{
+  text-align: center;
+
+  width: 319px;
+
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #333333;
+
+  padding: 29px 35px 44px 35px;
+}
+
