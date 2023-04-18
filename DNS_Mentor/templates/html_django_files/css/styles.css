@@ -60,7 +60,7 @@ body{
   animation: font-weight-animation 0.1s ease-in;
 }
 
-.nav-link:active{
+.nav_link:active{
   color: #FD890A;
 }
 

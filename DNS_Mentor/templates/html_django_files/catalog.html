@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DNS Mentor</title>
+
+    <link rel="stylesheet" href="css\catalog.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/multiselect-dropdown.js"></script> <!-- скрипт для дропдауна фильтров -->
+
+  </head>
+  <body>
+  
+	<header class="header">
+		<div class="container">
+			<div class="header_inner">
+				<div class="header_logo">
+					<a href="index.html" class="nav_logo"><img src="images/logo.svg"></a>
+				</div>
+					<nav class="nav">
+						<a class="nav_link" href="catalog.html">Каталог</a>
+						<a class="nav_link" href="#">Стать ментором</a>
+					</nav>
+			</div>
+		</div>
+	</header>
+
+    <div class="catalog">
+      <div class="container">
+        
+        <div class="catalog-title">Каталог менторов</div>
+
+        <div class="input-holder">
+
+        
+        <fieldset class="search-container">
+          <div class="input-box">
+            <input type="text" placeholder="Поиск по сфере, скиллу или программе" class="field" />
+          </div>
+          
+          <div class="icons-container">
+            <div class="icon-search">
+              <img src="images/search.svg">
+            </div>
+          </div>
+        </fieldset>
+
+        <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
+            <option>Data Science</option>
+            <option>Frontend</option>
+            <option>Backend</option>
+        </select>
+
+        <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Цена'>
+          <option>Бесплатно</option>
+          <option>1-1000 рублей</option>
+          <option>1000-2000 рублей</option>
+          <option>2000-5000 рублей</option>
+          <option>5000-8000 рублей</option>
+          <option>По договорённости</option> 
+      </select>
+
+      <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Опыт'>
+        <option>Меньше года</option>
+        <option>1 год</option>
+        <option>2 года</option>
+        <option>3 года</option>
+        <option>4 года</option>
+        <option>5 лет</option>
+        <option>6 лет</option>   
+        <option>7 лет</option>  
+        <option>8 лет</option>  
+        <option>9 лет</option> 
+        <option>10 лет</option>   
+    </select>
+        
+
+        
+
+        </div>
+
+        <div class="catalog-cards">
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+          <div class="card">
+            <div class="card-background">
+              <img class="card-background" src="images/placeholder-cat.jpg">
+            </div>
+ 
+
+            <div class="card-text">
+              <div class="card-name">Майк Вазовски</div>
+              <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайн</div>
+
+              <div class="card-stats">
+
+                <div class="card-experience">
+                  <img src="images/bulb1.svg">
+                  5 лет
+                </div>
+
+                <div class="card-price">
+                  <img  src="images/money1.svg">
+                  5000 P
+                </div>
+
+                <div class="card-people">
+                  <img src="images/users1.svg">
+                  54 человека
+                </div>
+
+              </div>
+            </div>
+            
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>
