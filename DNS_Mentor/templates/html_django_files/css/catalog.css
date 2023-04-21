@@ -177,6 +177,7 @@ select{
 }
 
 
+
 /* карточки */
 
 .catalog-cards{
@@ -187,25 +188,81 @@ select{
   justify-content: space-between;
 
   gap: 1rem;
+
+  flex-flow: row wrap;
 }
 
 .card{
   width: 35vh;
   height: 47vh;
   
-  background-color: #FD890A;
+  /* background-color: #FD890A; */
   background-image: url(images/placeholder-cat.jpg);
 
   border-radius: 12px;
+
+  color: #FFFFFF;
+  text-decoration: none;
+  background: linear-gradient(359.91deg, #000000 0.06%, rgba(0, 0, 0, 0) 47.36%);  /* не работает */
+  filter: drop-shadow(0px 0.96956px 7.85165px rgba(0, 0, 0, 0.5));
+
+  position: relative;
+  
 }
 
+
 .card-background{
+  position: absolute;
   width: 35vh;
   height: 47vh;
 
   object-fit: cover;
+
+  border-radius: 12px;
+
+  z-index: 3;
+  
 }
 
 .card-text{
-  margin-top: -120px;
+  position: absolute;
+  text-shadow: 0px 0px 8px #000000;
+
+  z-index: 4;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+}
+
+
+.card-name{
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.card-desc{
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.card-stats{
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 15px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-main-text{
+  margin-bottom: 5%;
 }
