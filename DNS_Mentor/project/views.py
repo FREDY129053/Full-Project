@@ -2,13 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import MentorForm
 
-
 def home(request):
-    return HttpResponse('<h1>Главная</h1>')
+    return render(request, 'project/index.html')
 
 
 def about(request):
-    return render(request, 'index.html')
+    return render(request, 'project/a.html')
 
 
 def index(request):
