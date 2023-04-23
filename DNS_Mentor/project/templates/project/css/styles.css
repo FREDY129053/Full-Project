@@ -566,3 +566,33 @@ button{
       font-size: 3vb;
       cursor: pointer;
     }
+
+
+    /* faq styles */
+
+.faq-title{
+  text-align: center;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 53px;
+  color: #333333;
+  padding-top: 40px;
+  padding-bottom: 47px;
+  color: #333333;
+}
+
+.question{
+  font-family: 'PT Sans';
+  font-weight: 700;
+  font-size: 24px;
+  color: #333333;
+}
+
+.answer{
+  font-family: 'PT Sans';
+  font-weight: 400;
+  font-size: 20px;
+  color: #333333;
+}
