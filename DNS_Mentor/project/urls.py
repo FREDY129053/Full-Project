@@ -1,9 +1,10 @@
 from django.urls import path
-from . import views
+from .views import *
 
 
+# создание ссылок на страницы
 urlpatterns = [
-	path('', views.home, name='project-home'),
-	path('about/', views.about, name='about-club'),
-	path('index/', views.index, name='mentor'),
+	path('', home),
+	path('about/', about),
+	path('index/', index),
 ]
