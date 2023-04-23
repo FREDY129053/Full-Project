@@ -16,18 +16,57 @@
 		<div class="container">
 			<div class="header_inner">
 				<div class="header_logo">
-					<a href="#" class="nav_logo"><img src="images/logo.svg"></a>
+					<a href="index.html" class="nav_logo"><img src="images/logo.svg"></a>
 				</div>
 					<nav class="nav">
-						<a class="nav_link" href="#">Каталог</a>
-						<a class="nav_link" href="#">Стать ментором</a>
+						<a class="nav_link" href="catalog.html">Каталог</a>
+						<a class="nav_link" href="#" id="open_pop_up_a">Стать ментором</a>
 					</nav>
+                    <div class="pop_up_a" id="pop_up_a">
+                        <div class="pop_up_container_a">
+                          <div class="pop_up_body_a" id="pop_up_body">
+                            <p class="temp_a">Заполните <span class="text_a">анкету</span></p>
+                            <p1 class="main_a">После отправления запроса мы его тщательно осмотрим,</p1>
+                            <br>
+                            <p1 class="man_a">  если он будет принят, вам в Telegram придёт оповещение.</p1>
+                          
+                            <form action="">
+                              <div class="btn-group">
+                                <input type="text" class="name_a" placeholder="Имя">
+                                <input type="text" class="surname_a" placeholder="Фамилия">
+                              </div>
+                    
+                              <div class="btn-group">
+                                <input type="text" class="telegram_a" placeholder="@Telegram">
+                                <input type="text" class="email_a" placeholder="E-mail">
+                              </div>
+                    
+                              <div class="btn-group">
+                                <input type="text" class="price_a" placeholder="цена услуги">
+                                <input type="text" class="experience_a" placeholder="опыт работы">
+                              </div>
+                              
+                            
+                              <textarea class="field_a" placeholder="Сферы(через запятую)"></textarea>
+                              <textarea class="about_a" placeholder="О себе"></textarea>
+                              <p class="add_a">Добавьте фотографию(png, jpeg)</p>
+                              
+                              <input type="file" class="photo_a">
+                              
+                              
+                              
+                              <button>отправить</button>
+                    
+                            </form>
+                            <div class="pop_up_close_a" id="pop_up_close_a">&#10006</div>
+                          </div>
+                        </div>
+                      </div>
 			</div>
 		</div>
 	</header>
 
     <div class="info">
-      <div class="container">
         <p class="name">
             Иванов Илья Сергеевич
         </p>
@@ -40,15 +79,44 @@
             <li>Получили помощь:</li>
         </ul>
         <div class="img">
-            <img class="image" src="/images/23oQj0MKQy8.jpg" alt="">
+            <img class="image" src="images/23oQj0MKQy8.jpg" alt="">
         </div>
         <div class="button">
             <a href="#" id="open_pop_up">оставить заявку</a>
         </div> 
-      </div>
+        <div class="pop_up" id="pop_up">
+            <div class="pop_up_container">
+              <div class="pop_up_body" id="pop_up_body">
+                <p class="temp">Заполните <span class="text">заявку</span></p>
+                <p1 class="main">Надеемся, ментор как можно скорее ответит на ваш запрос.</p1>
+                <br>
+                <p1 class="man">Уведомление придет на почту или в телеграм.</p1>
+              
+                <form action="">
+                  <div class="btn-group">
+                    <input type="text" class="name_blank" placeholder="Имя">
+                    <input type="text" class="surname" placeholder="Фамилия">
+                  </div>
+        
+                  <div class="btn-group">
+                    <input type="text" class="telegram" placeholder="@Telegram">
+                    <input type="text" class="email" placeholder="E-mail">
+                  </div>
+                  
+                  <p>
+                    <label for="date" class="label">Дата встречи:</label>
+                    <input type="date" id="date" class="date">
+                  </p>
+
+                  <button>отправить</button>
+        
+                </form>
+                <div class="pop_up_close" id="pop_up_close">&#10006</div>
+              </div>
+            </div>
+          </div>
     </div>
     <div class="about">
-      <div class="container">
         <p class="myself">О себе</p>
         <p class="skills">
             Имею высшее образование в области разработки игр и большое количество курсов и тренингов, направленных на повышение квалификации в различных технических и менеджмент-направлениях. Общий опыт работы в игровой индустрии более 10 лет, в том числе более 5 лет на руководящих позициях.
@@ -73,7 +141,17 @@
             <li>Внедрение системы постановки целей OKR;</li>
             <li>Подбор и адаптация членов команды, с учетом ценностей компании;</li>
         </ul>
-      </div>
     </div>
+    <div class="footer">
+        <a href="https://t.me/fredy129053" class="links">Telegram bot</a>
+        <span>|</span>
+        <a href="#" class="likns">DNS</a>
+        <br><br>
+        <span>Удачной встречи!</span>
+        <br>
+        <img src="images/Handshake.svg" alt="встреча" width="50%" height="150%">
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
