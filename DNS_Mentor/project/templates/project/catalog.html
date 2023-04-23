@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-    <link rel="stylesheet" href="css\catalog.css">
+    <link rel="stylesheet" href="{% static 'styles/css/catalog.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="js/multiselect-dropdown.js"></script> <!-- скрипт для дропдауна фильтров -->
+    <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script> <!-- скрипт для дропдауна фильтров -->
 
   </head>
   <body>
@@ -18,7 +19,7 @@
       <div class="container">
         <div class="header_inner">
           <div class="header_logo">
-            <a href="index.html" class="nav_logo"><img src="images/logo.svg"></a>
+            <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
           </div>
             <nav class="nav">
               <a class="nav_link" href="catalog.html">Каталог</a>
@@ -28,7 +29,7 @@
             <div class="burger-menu">
   
               <button id="burger">
-                <img src="images/menu-icon.svg" alt="">
+                <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
               </button>
   
   
@@ -57,7 +58,7 @@
           
           <div class="icons-container">
             <div class="icon-search">
-              <img src="images/search.svg">
+              <img src="{% static 'styles/images/search.svg' %}">
             </div>
           </div>
         </fieldset>
@@ -101,7 +102,7 @@
           <a href="#" class="card">
             <div class="card-content">
               <div class="card-background">
-                <img class="card-background" src="images/placeholder-cat.jpg">
+                <img class="card-background" src="{% static 'styles/images/placeholder-cat.jpg' %}">
               </div>
   
 
@@ -116,281 +117,30 @@
                 <div class="card-stats">
 
                   <div class="card-experience">
-                    <img src="images/card-exp.png">
+                    <img src="{% static 'styles/images/card-exp.png' %}">
                     5 лет
                   </div>
 
                   <div class="card-price">
-                    <img src="images/card-money.png">
+                    <img src="{% static 'styles/images/card-money.png' %}">
                     5000 P
                   </div>
 
                   <div class="card-people">
-                    <img src="images/card-users.png">
+                    <img src="{% static 'styles/images/card-users.png' %}">
                     54 человека
                   </div>
 
                 </div>
               </div>
-              
-
             </div>
           </a>
-
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="images/placeholder-cat.jpg">
-              </div>
-  
-
-              <div class="card-text">
-
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
-
-                <div class="card-stats">
-
-                  <div class="card-experience">
-                    <img src="images/card-exp.png">
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="images/card-money.png">
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="images/card-users.png">
-                    54 человека
-                  </div>
-
-                </div>
-              </div>
-              
-
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="images/placeholder-cat.jpg">
-              </div>
-  
-
-              <div class="card-text">
-
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
-
-                <div class="card-stats">
-
-                  <div class="card-experience">
-                    <img src="images/card-exp.png">
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="images/card-money.png">
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="images/card-users.png">
-                    54 человека
-                  </div>
-
-                </div>
-              </div>
-              
-
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="images/placeholder-cat.jpg">
-              </div>
-  
-
-              <div class="card-text">
-
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
-
-                <div class="card-stats">
-
-                  <div class="card-experience">
-                    <img src="images/card-exp.png">
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="images/card-money.png">
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="images/card-users.png">
-                    54 человека
-                  </div>
-
-                </div>
-              </div>
-              
-
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="images/placeholder-cat.jpg">
-              </div>
-  
-
-              <div class="card-text">
-
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
-
-                <div class="card-stats">
-
-                  <div class="card-experience">
-                    <img src="images/card-exp.png">
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="images/card-money.png">
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="images/card-users.png">
-                    54 человека
-                  </div>
-
-                </div>
-              </div>
-              
-
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="images/placeholder-cat.jpg">
-              </div>
-  
-
-              <div class="card-text">
-
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
-
-                <div class="card-stats">
-
-                  <div class="card-experience">
-                    <img src="images/card-exp.png">
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="images/card-money.png">
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="images/card-users.png">
-                    54 человека
-                  </div>
-
-                </div>
-              </div>
-              
-
-            </div>
-          </a>
-
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="images/placeholder-cat.jpg">
-              </div>
-  
-
-              <div class="card-text">
-
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
-
-                <div class="card-stats">
-
-                  <div class="card-experience">
-                    <img src="images/card-exp.png">
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="images/card-money.png">
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="images/card-users.png">
-                    54 человека
-                  </div>
-
-                </div>
-              </div>
-              
-
-            </div>
-          </a>
-
-        
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-
-
         </div>
 
 
       </div>
     </div>
 
-    <script src="js/burger.js"></script>
+    <script src="{% static 'styles/js/burger.js' %}"></script>
   </body>
 </html>

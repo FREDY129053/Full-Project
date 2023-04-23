@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load project %}
+{% load static %}
 <html>
   <head>
     <meta charset="utf-8">
@@ -40,7 +40,7 @@
 		<div class="container">
 			<div class="header_inner">
 				<div class="header_logo">
-					<a href="index.html" class="nav_logo"><img src="images/logo.svg"></a>
+					<a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
 				</div>
 					<nav class="nav">
 						<a class="nav_link" href="catalog.html">Каталог</a>
@@ -50,7 +50,7 @@
           <div class="burger-menu">
 
             <button id="burger">
-              <img src="images/menu-icon.svg" alt="">
+              <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
             </button>
 
 
@@ -109,12 +109,12 @@
         <div class="introduction-holder">
 
           <div class="introduction-image">
-            <img src="images/introduction-art.svg" alt="">
+            <img src="{% static 'styles/images/introduction-art.svg' %}" alt="">
           </div>
           
           <div class="introduction-info">
             <div class="introduction-logo">
-              <img src="images/introduction-logo.svg" alt="">
+              <img src="{% static 'styles/images/introduction-logo.svg' %}" alt="">
             </div>
 
             <div class="introduction-desc">
@@ -154,7 +154,7 @@
               </div>
 
               <div class="card-image">
-                <img class="card-img" src="images/mentor-card.svg">
+                <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
               </div>
 
               <div class="card-desc">
@@ -176,7 +176,7 @@
               </div>
 
               <div class="card-image">
-                <img class="card-img" src="images/mentor-card.svg">
+                <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
               </div>
 
               <div class="card-desc">
@@ -199,7 +199,7 @@
               </div>
 
               <div class="card-image">
-                <img class="card-img" src="images/mentor-card.svg">
+                <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
               </div>
 
               <div class="card-desc">
@@ -282,7 +282,7 @@
     </div>
 
     </div>
-    <script src="js/main.js"></script>
-    <script src="js/burger.js"></script>
+    <script src="{% static 'styles/js/main.js' %}"></script>
+    <script src="{%static 'styles/js/burger.js' %}"></script>
   </body>
 </html>
