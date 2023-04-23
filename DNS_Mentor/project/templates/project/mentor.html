@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница ментора</title>
-    <link rel="stylesheet" href="{% static 'styles/css/mentor.css' %}">
+
+    <link rel="stylesheet" href="styles/css/mentor.css">
+    <!-- <link rel="stylesheet" href="{% static 'styles/css/mentor.css' %}"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +19,8 @@
 		<div class="container">
 			<div class="header_inner">
 				<div class="header_logo">
-					<a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
+					<a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
+          <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a> -->
 				</div>
 					<nav class="nav">
 						<a class="nav_link" href="catalog.html">Каталог</a>
@@ -80,7 +83,8 @@
             <li>Получили помощь:</li>
         </ul>
         <div class="img">
-            <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt="">
+            <img class="image" src="styles/images/23oQj0MKQy8.jpg" alt="">
+            <!-- <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt=""> -->
         </div>
         <div class="button">
             <a href="#" id="open_pop_up">оставить заявку</a>
@@ -150,9 +154,11 @@
         <br><br>
         <span>Удачной встречи!</span>
         <br>
-        <img src="{% static 'styles/images/Handshake.svg' %}" alt="встреча" width="50%" height="150%">
+        <img src="static 'styles/images/Handshake.svg" alt="встреча" width="50%" height="150%">
+        <!-- <img src="{% static 'styles/images/Handshake.svg' %}" alt="встреча" width="50%" height="150%"> -->
 </div>
 
-<script src="%{ static 'styles/js/main.js' %}"></script>
+<script src="styles/js/main.js"></script>
+<!-- <script src="%{ static 'styles/js/main.js' %}"></script> -->
 </body>
 </html>

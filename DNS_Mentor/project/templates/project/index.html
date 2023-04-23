@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-    <link rel="stylesheet" href="static/styles/css/styles.css">
+    <link rel="stylesheet" href="styles/css/styles.css">
     <!-- <link rel="stylesheet" href="{% static 'styles/css/styles.css' %}"> -->
 
-    <link rel="stylesheet" href="css\styles.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,30 +17,13 @@
   </head>
   <body>
 
-    <!--<div class="header">
-
-        <div class="container">
-          <div class="header-line">
-            <div class="header-logo">
-              <img src="images/logo.svg" alt="">
-            </div>
-
-            <div class="nav">
-              <a class="nav-item" href="*">Каталог</a>
-              <a class="nav-item" href="*">Стать ментором</a>
-            </div>
-
-          </div>
-      </div>
-
-    </div>-->
-     
-    
+  
 	<header class="header">
 		<div class="container">
 			<div class="header_inner">
 				<div class="header_logo">
-					<a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
+					<a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
+          <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>   для сервера (дальнейшие ссылки по такому же принципу)-->  
 				</div>
 					<nav class="nav">
 						<a class="nav_link" href="catalog.html">Каталог</a>
@@ -50,7 +33,8 @@
           <div class="burger-menu">
 
             <button id="burger">
-              <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
+              <img src="styles/images/menu-icon.svg" alt="">
+              <!-- <img src="{% static 'styles/images/menu-icon.svg' %}" alt=""> -->
             </button>
 
 
@@ -109,12 +93,14 @@
         <div class="introduction-holder">
 
           <div class="introduction-image">
-            <img src="{% static 'styles/images/introduction-art.svg' %}" alt="">
+            <img src="styles/images/introduction-art.svg" alt="">
+            <!-- <img src="{% static 'styles/images/introduction-art.svg' %}" alt=""> -->
           </div>
           
           <div class="introduction-info">
             <div class="introduction-logo">
-              <img src="{% static 'styles/images/introduction-logo.svg' %}" alt="">
+              <img src="styles/images/introduction-logo.svg" alt="">
+              <!-- <img src="{% static 'styles/images/introduction-logo.svg' %}" alt=""> -->
             </div>
 
             <div class="introduction-desc">
@@ -154,7 +140,8 @@
               </div>
 
               <div class="card-image">
-                <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
+                <img class="card-img" src="styles/images/mentor-card.svg">
+                <!-- <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}"> -->
               </div>
 
               <div class="card-desc">
@@ -176,7 +163,8 @@
               </div>
 
               <div class="card-image">
-                <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
+                <img class="card-img" src="styles/images/mentor-card.svg">
+                <!-- <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}"> -->
               </div>
 
               <div class="card-desc">
@@ -199,7 +187,8 @@
               </div>
 
               <div class="card-image">
-                <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
+                <img class="card-img" src="styles/images/mentor-card.svg">
+                <!-- <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}"> -->
               </div>
 
               <div class="card-desc">
@@ -282,7 +271,10 @@
     </div>
 
     </div>
-    <script src="{% static 'styles/js/main.js' %}"></script>
-    <script src="{%static 'styles/js/burger.js' %}"></script>
+    <script src="static 'styles/js/main.js"></script>
+    <script src="static 'styles/js/burger.js"></script>
+
+    <!-- <script src="{% static 'styles/js/main.js' %}"></script>
+    <script src="{%static 'styles/js/burger.js' %}"></script> -->
   </body>
 </html>
