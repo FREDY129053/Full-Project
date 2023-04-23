@@ -7,8 +7,6 @@
 
     <!-- <link rel="stylesheet" href="styles/css/catalog.css"> -->
     <link rel="stylesheet" href="{% static 'styles/css/catalog.css' %}">
-    <!-- <link rel="stylesheet" href="styles/css/catalog.css"> -->
-    <link rel="stylesheet" href="{% static 'styles/css/catalog.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,48 +29,8 @@
             <nav class="nav">
               <a class="nav_link" href="catalog.html">Каталог</a>
               <a class="nav_link" href="#" id="open_pop_up">Стать ментором</a>
-              <a class="nav_link" href="#" id="open_pop_up">Стать ментором</a>
             </nav>
-            <div class="pop_up" id="pop_up">
-              <div class="pop_up_container">
-                <div class="pop_up_body" id="pop_up_body">
-                  <p class="temp">Заполните <span class="text">анкету</span></p>
-                  <p1 class="main">После отправления запроса мы его тщательно осмотрим,</p1>
-                  <br>
-                  <p1 class="man">  если он будет принят, вам в Telegram придёт оповещение.</p1>
-                
-                  <form action="">
-                    <div class="btn-group">
-                      <input type="text" class="name" placeholder="Имя">
-                      <input type="text" class="surname" placeholder="Фамилия">
-                    </div>
-          
-                    <div class="btn-group">
-                      <input type="text" class="telegram" placeholder="@Telegram">
-                      <input type="text" class="email" placeholder="E-mail">
-                    </div>
-          
-                    <div class="btn-group">
-                      <input type="text" class="price" placeholder="цена услуги">
-                      <input type="text" class="experience" placeholder="опыт работы">
-                    </div>
-                    
-                  
-                    <textarea class="field_a" placeholder="Сферы(через запятую)"></textarea>
-                    <textarea class="about" placeholder="О себе"></textarea>
-                    <p class="add">Добавьте фотографию(png, jpeg)</p>
-                    
-                    <input type="file" class="photo">
-                    
-                    
-                    
-                    <button>отправить</button>
-          
-                  </form>
-                  <div class="pop_up_close" id="pop_up_close">&#10006</div>
-                </div>
-              </div>
-            </div>
+  
             <div class="burger-menu">
   
               <button id="burger">
@@ -142,18 +100,13 @@
         <div class="search-line">
 
         
-        <fieldset class="search-container">
-          <div class="input-box">
-            <input type="text" placeholder="Поиск по сфере, скиллу или программе" class="field" />
-          </div>
-          
-          <div class="icons-container">
-            <div class="icon-search">
-              <img src="styles/images/search.svg">
-              <!-- <img src="{% static 'styles/images/search.svg' %}"> -->
-            </div>
-          </div>
-        </fieldset>
+        <form>
+          <input type="text" placeholder="Искать по сфере, навыку или программе...">
+          <button type="submit">
+            <!-- <img src="styles/images/search.png"> -->
+            <!-- <img src="{% static 'styles/images/search.png' %}"> -->
+          </button>
+        </form>
 
         <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
           <option>Data Science</option>
@@ -200,43 +153,32 @@
             
           </div>
 
-        <div class="catalog-cards">
+          <div class="catalog-person-info">
+            <div class="catalog-person-name">
+              Максим Новиков
+            </div>
 
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="styles/images/placeholder-cat.jpg">
-                <!-- <img class="card-background" src="{% static 'styles/images/placeholder-cat.jpg' %}"> -->
-              </div>
-  
+            <div class="catalog-person-fields">
+              Дизайн, Backend, Data Science
+            </div>
 
-              <div class="card-text">
+            <div class=catalog-person-stats>
 
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
+            
+            <div class="catalog-person-experience">
+              Опыт: 
+              <div class="catalog-person-exp">5 лет</div>
+            </div>
 
-                <div class="card-stats">
+            <div class="catalog-person-money">
+              Оплата: 
+              <div class="catalog-person-mon">По договорённости</div>
+            </div>
 
-                  <div class="card-experience">
-                    <img src="styles/images/card-exp.png">
-                    <!-- <img src="{% static 'styles/images/card-exp.png' %}"> -->
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="styles/images/card-money.png">
-                    <!-- <img src="{% static 'styles/images/card-money.png' %}"> -->
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="styles/images/card-users.png">
-                    <!-- <img src="{% static 'styles/images/card-users.png' %}"> -->
-                    54 человека
-                  </div>
+            <div class="catalog-person-helped">
+              Обратились: 
+              <div class="catalog-person-help">54 человека</div>
+            </div>
 
           </div>
           </div>
@@ -264,7 +206,17 @@
       </div>
     </div>
 
-    <script src="styles/js/burger.js"></script>
-    <!-- <script src="{% static 'styles/js/burger.js' %}"></script> -->
+    <div class="footer">
+      <a href="https://t.me/fredy129053" class="links">Telegram bot</a>
+      <span>|</span>
+      <a href="#" class="likns">DNS</a>
+      <br><br>
+      <span>Удачной встречи!</span>
+      <br>
+      
+  </div>
+
+    <!-- <script src="styles/js/burger.js"></script> -->
+    <script src="{% static 'styles/js/burger.js' %}"></script>
   </body>
 </html>
