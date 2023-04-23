@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-    <link rel="stylesheet" href="styles/css/catalog.css">
-    <!-- <link rel="stylesheet" href="{% static 'styles/css/catalog.css' %}"> -->
+    <!-- <link rel="stylesheet" href="styles/css/catalog.css"> -->
+    <link rel="stylesheet" href="{% static 'styles/css/catalog.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script> <!-- скрипт для дропдауна фильтров -->
-    <!-- <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script> -->
+    <!-- <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script> -->
+    <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script>
 
 
   </head>
@@ -23,19 +23,19 @@
       <div class="container">
         <div class="header_inner">
           <div class="header_logo">
-            <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
-            <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a> -->
+            <!-- <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a> -->
+            <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>  
           </div>
             <nav class="nav">
               <a class="nav_link" href="catalog.html">Каталог</a>
-              <a class="nav_link" href="#">Стать ментором</a>
+              <a class="nav_link" href="#" id="open_pop_up">Стать ментором</a>
             </nav>
   
             <div class="burger-menu">
   
               <button id="burger">
-                <img src="styles/images/menu-icon.svg" alt="">
-                <!-- <img src="{% static 'styles/images/menu-icon.svg' %}" alt=""> -->
+                <!-- <img src="styles/images/menu-icon.svg" alt=""> -->
+                <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
               </button>
   
   
@@ -46,34 +46,72 @@
   
             </div>
         </div> 
+        <div class="pop_up" id="pop_up">
+          <div class="pop_up_container">
+            <div class="pop_up_body" id="pop_up_body">
+              <p class="temp">Заполните <span class="text">анкету</span></p>
+              <p1 class="main">После отправления запроса мы его тщательно осмотрим,</p1>
+              <br>
+              <p1 class="man">  если он будет принят, вам в Telegram придёт оповещение.</p1>
+            
+              <form action="">
+                <div class="btn-group">
+                  <input type="text" class="name" placeholder="Имя">
+                  <input type="text" class="surname" placeholder="Фамилия">
+                </div>
+      
+                <div class="btn-group">
+                  <input type="text" class="telegram" placeholder="@Telegram">
+                  <input type="text" class="email" placeholder="E-mail">
+                </div>
+      
+                <div class="btn-group">
+                  <input type="text" class="price" placeholder="цена услуги">
+                  <input type="text" class="experience" placeholder="опыт работы">
+                </div>
+                
+              
+                <textarea class="field" placeholder="Сферы(через запятую)"></textarea>
+                <textarea class="about" placeholder="О себе"></textarea>
+                <p class="add">Добавьте фотографию(png, jpeg)</p>
+                
+                <input type="file" class="photo">
+                
+                
+                
+                <button>отправить</button>
+      
+              </form>
+              <div class="pop_up_close" id="pop_up_close">&#10006</div>
+            </div>
+          </div>
+        </div>
       </div> 
     </header>
 
     <div class="catalog">
       <div class="container">
+        <div class="catalog-holder">
+
+        
         
         <div class="catalog-title">Каталог менторов</div>
 
-        <div class="input-holder">
+        <div class="search-line">
 
         
-        <fieldset class="search-container">
-          <div class="input-box">
-            <input type="text" placeholder="Поиск по сфере, скиллу или программе" class="field" />
-          </div>
-          
-          <div class="icons-container">
-            <div class="icon-search">
-              <img src="styles/images/search.svg">
-              <!-- <img src="{% static 'styles/images/search.svg' %}"> -->
-            </div>
-          </div>
-        </fieldset>
+        <form>
+          <input type="text" placeholder="Искать по сфере, навыку или программе...">
+          <button type="submit">
+            <!-- <img src="styles/images/search.png"> -->
+            <!-- <img src="{% static 'styles/images/search.png' %}"> -->
+          </button>
+        </form>
 
         <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
-            <option>Data Science</option>
-            <option>Frontend</option>
-            <option>Backend</option>
+          <option>Data Science</option>
+          <option>Frontend</option>
+          <option>Backend</option>
         </select>
 
         <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Цена'>
@@ -83,76 +121,102 @@
           <option>2000-5000 рублей</option>
           <option>5000-8000 рублей</option>
           <option>По договорённости</option> 
+        </select>
+
+        <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Опыт'>
+          <option>Меньше года</option>
+          <option>1 год</option>
+          <option>2 года</option>
+          <option>3 года</option>
+          <option>4 года</option>
+          <option>5 лет</option>
+          <option>6 лет</option>   
+          <option>7 лет</option>  
+          <option>8 лет</option>  
+          <option>9 лет</option> 
+          <option>10 лет</option>   
       </select>
-
-      <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Опыт'>
-        <option>Меньше года</option>
-        <option>1 год</option>
-        <option>2 года</option>
-        <option>3 года</option>
-        <option>4 года</option>
-        <option>5 лет</option>
-        <option>6 лет</option>   
-        <option>7 лет</option>  
-        <option>8 лет</option>  
-        <option>9 лет</option> 
-        <option>10 лет</option>   
-    </select>
         
-
-        
-
         </div>
 
-        <div class="catalog-cards">
+        <div class="catalog-list">
+        <div class="catalog-person">
 
-          <a href="#" class="card">
-            <div class="card-content">
-              <div class="card-background">
-                <img class="card-background" src="styles/images/placeholder-cat.jpg">
-                <!-- <img class="card-background" src="{% static 'styles/images/placeholder-cat.jpg' %}"> -->
-              </div>
-  
+          <div class="person-holder">
 
-              <div class="card-text">
+            <div class="person-right">
+          <div class="catalog-person-image">
+            <a href="#">
+              <!-- <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg"> -->
+              <img src="{% static 'styles/images/placeholder-cat.jpg' %}" alt="">
+            </a>
+            
+          </div>
 
-                <div class="card-main-text">
-                  <div class="card-name">Майк Вазовски</div>
-                  <div class="card-desc">Дизайн, Data Science, Backend, UI/UX дизайнUI/UX дизайнUI/UX дизайнUI/UX дизайн</div>
-                </div>
-                
-
-                <div class="card-stats">
-
-                  <div class="card-experience">
-                    <img src="styles/images/card-exp.png">
-                    <!-- <img src="{% static 'styles/images/card-exp.png' %}"> -->
-                    5 лет
-                  </div>
-
-                  <div class="card-price">
-                    <img src="styles/images/card-money.png">
-                    <!-- <img src="{% static 'styles/images/card-money.png' %}"> -->
-                    5000 P
-                  </div>
-
-                  <div class="card-people">
-                    <img src="styles/images/card-users.png">
-                    <!-- <img src="{% static 'styles/images/card-users.png' %}"> -->
-                    54 человека
-                  </div>
-
-                </div>
-              </div>
+          <div class="catalog-person-info">
+            <div class="catalog-person-name">
+              Максим Новиков
             </div>
-          </a>
+
+            <div class="catalog-person-fields">
+              Дизайн, Backend, Data Science
+            </div>
+
+            <div class=catalog-person-stats>
+
+            
+            <div class="catalog-person-experience">
+              Опыт: 
+              <div class="catalog-person-exp">5 лет</div>
+            </div>
+
+            <div class="catalog-person-money">
+              Оплата: 
+              <div class="catalog-person-mon">По договорённости</div>
+            </div>
+
+            <div class="catalog-person-helped">
+              Обратились: 
+              <div class="catalog-person-help">54 человека</div>
+            </div>
+
+          </div>
+          </div>
+          </div>
+
+          <div class="catalog-button">
+            <a class="catalog-btn" href="#">
+              <!-- <img class="message" src="styles/images/message.png"> -->
+              <img src="{% static 'styles/images/message.png' %}" alt="">
+              <div class="message-text">Оставить заявку</div> 
+            </a>
+          </div>
+          
+
+
+          </div>
+          
+
         </div>
 
+        
 
+        </div>
+        </div>
       </div>
     </div>
 
-    <script src="styles/js/burger.js"></script>
-    <!-- <script src="{% static 'styles/js/burger.js' %}"></script> -->
+    <div class="footer">
+      <a href="https://t.me/fredy129053" class="links">Telegram bot</a>
+      <span>|</span>
+      <a href="#" class="likns">DNS</a>
+      <br><br>
+      <span>Удачной встречи!</span>
+      <br>
+      
+  </div>
+
+    <!-- <script src="styles/js/burger.js"></script> -->
+    <script src="{% static 'styles/js/burger.js' %}"></script>
   </body>
 </html>
