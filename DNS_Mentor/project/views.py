@@ -3,6 +3,16 @@ from django.http import HttpResponse
 from .forms import MentorForm
 
 
+# ментор
+def mentor(request):
+    return render(request, 'project/mentor.html')
+
+
+# каталог
+def catalog(request):
+    return render(request, 'project/catalog.html')
+
+
 # домашняя страница
 def home(request):
     return render(request, 'project/index.html')
