@@ -16,7 +16,7 @@ def catalog(request):
 
 def postsearch(request):
     search = request.POST.get("search", "Undefined")
-    return render(request, 'project/catalog.html')
+    return search
 
 
 # домашняя страница

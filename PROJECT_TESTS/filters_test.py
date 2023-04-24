@@ -1,4 +1,6 @@
 from mysql.connector import connect, Error
+from django.urls import path
+from DNS_Mentor.project import views
 
 try:
     with connect(
@@ -27,47 +29,47 @@ try:
         print()
 
         # Ввод инфы для фильтра и поиска
-        filt_category = input("Фильтровать по ")
-        if filt_category == "sphere":
-            print("Возможные значения:")
-            select_spheres = f"SELECT {filt_category} FROM mentors"
-            with connection.cursor() as cursor:
-                cursor.execute(select_spheres)
-                result = cursor.fetchall()
-                # создание неповторяющихся значений фильтра у сфер
-                temp = [i for sub in result for i in sub]
-                temp2 = []
-                for i in temp:
-                    if "" in i:
-                        temp2.append(i.split())
-                    else:
-                        temp2.append(i)
-                temp3 = [i for sub in temp2 for i in sub]
-                filters_values = set(temp3)
-                for item in filters_values:
-                    print(item)
-
-            filt_value = input("Значение фильтра ")
-            filt = f"""
-            SELECT * FROM mentors
-            WHERE {filt_category} LIKE '%{filt_value}%'
-            """
-        else:
-            filt_value = input("Значение фильтра ")
-            filt_more_less = input("Больше / меньше / равно ")
-            filt = f"""
-            SELECT * FROM mentors
-            WHERE {filt_category} {filt_more_less} {filt_value}
-            """
-        search_input = input("Поиск ")
+        # filt_category = input("Фильтровать по ")
+        # if filt_category == "sphere":
+        #     print("Возможные значения:")
+        #     select_spheres = f"SELECT {filt_category} FROM mentors"
+        #     with connection.cursor() as cursor:
+        #         cursor.execute(select_spheres)
+        #         result = cursor.fetchall()
+        #         # создание неповторяющихся значений фильтра у сфер
+        #         temp = [i for sub in result for i in sub]
+        #         temp2 = []
+        #         for i in temp:
+        #             if "" in i:
+        #                 temp2.append(i.split())
+        #             else:
+        #                 temp2.append(i)
+        #         temp3 = [i for sub in temp2 for i in sub]
+        #         filters_values = set(temp3)
+        #         for item in filters_values:
+        #             print(item)
+        #
+        #     filt_value = input("Значение фильтра ")
+        #     filt = f"""
+        #     SELECT * FROM mentors
+        #     WHERE {filt_category} LIKE '%{filt_value}%'
+        #     """
+        # else:
+        #     filt_value = input("Значение фильтра ")
+        #     filt_more_less = input("Больше / меньше / равно ")
+        #     filt = f"""
+        #     SELECT * FROM mentors
+        #     WHERE {filt_category} {filt_more_less} {filt_value}
+        #     """
+        search_input = views.postsearch()
         search_input_list = search_input.split()
 
-        # Вывод отфильтрованной информации
-        with connection.cursor() as cursor:
-            print(f"Фильтр по {filt_category}")
-            cursor.execute(filt)
-            for mentor in cursor.fetchall():
-                print(mentor)
+        # # Вывод отфильтрованной информации
+        # with connection.cursor() as cursor:
+        #     print(f"Фильтр по {filt_category}")
+        #     cursor.execute(filt)
+        #     for mentor in cursor.fetchall():
+        #         print(mentor)
 
         # Вывод поиска
         with connection.cursor() as cursor:
