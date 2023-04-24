@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-    <link rel="stylesheet" href="styles/css/catalog.css">
-    <!-- <link rel="stylesheet" href="{% static 'styles/css/catalog.css' %}"> -->
+<!--    <link rel="stylesheet" href="styles/css/catalog.css">-->
+    <link rel="stylesheet" href="{% static 'styles\css\catalog.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>
-    <!-- <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script> -->
+<!--    <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>-->
+     <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script>
 
 
   </head>
@@ -23,8 +23,8 @@
       <div class="container">
         <div class="header_inner">
           <div class="header_logo">
-            <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
-            <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>   -->
+<!--            <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>-->
+             <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
           </div>
             <nav class="nav">
               <a class="nav_link" href="catalog.html">Каталог</a>
@@ -34,8 +34,8 @@
             <div class="burger-menu">
   
               <button id="burger">
-                <img src="styles/images/menu-icon.svg" alt="">
-                <!-- <img src="{% static 'styles/images/menu-icon.svg' %}" alt=""> -->
+<!--                <img src="styles/images/menu-icon.svg" alt="">-->
+                 <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
               </button>
   
   
@@ -104,7 +104,7 @@
           <input type="text" placeholder="Искать по сфере, навыку или программе...">
           <button type="submit">
             <!-- <img src="styles/images/search.png"> -->
-            <!-- <img src="{% static 'styles/images/search.png' %}"> -->
+             <img src="{% static 'styles/images/search.png' %}">
           </button>
         </form>
 
@@ -147,8 +147,8 @@
             <div class="person-right">
           <div class="catalog-person-image">
             <a href="#">
-              <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">
-              <!-- <img src="{% static 'styles/images/placeholder-cat.jpg' %}" alt=""> -->
+<!--              <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">-->
+               <img class="catalog-person-img" src="{% static 'styles/images/placeholder-cat.jpg' %}" alt="">
             </a>
             
           </div>
@@ -186,8 +186,8 @@
 
           <div class="catalog-button">
             <a class="catalog-btn" href="#">
-              <img class="message" src="styles/images/message.png">
-              <!-- <img src="{% static 'styles/images/message.png' %}" alt=""> -->
+<!--              <img class="message" src="styles/images/message.png">-->
+               <img class="message" src="{% static 'styles/images/message.png' %}" alt="">
               <div class="message-text">Оставить заявку</div> 
             </a>
           </div>
@@ -216,7 +216,7 @@
       
   </div>
 
-    <script src="styles/js/burger.js"></script>
-    <!-- <script src="{% static 'styles/js/burger.js' %}"></script> -->
+<!--    <script src="styles/js/burger.js"></script>-->
+     <script src="{% static 'styles/js/burger.js' %}"></script>
   </body>
 </html>

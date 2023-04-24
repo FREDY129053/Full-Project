@@ -10,6 +10,7 @@ def mentor(request):
 
 # каталог
 def catalog(request):
+    # return render(request, 'project/catalog — old.html')
     return render(request, 'project/catalog.html')
 
 
