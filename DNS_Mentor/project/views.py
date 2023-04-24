@@ -15,7 +15,8 @@ def catalog(request):
 
 
 def postsearch(request):
-    search = request.POST.get("search", "Undefined")
+    search = request.POST.get("search", "ALina")
+    # return HttpResponse(f"<h2>{search}</h2>")
     return search
 
 
