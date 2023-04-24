@@ -4,7 +4,7 @@ from .views import *
 
 # создание ссылок на страницы
 urlpatterns = [
-	path('', catalog),
+	path('', home),
 	path('about/', about),
 	path('index/', index),
 	path('mentor/', mentor),
