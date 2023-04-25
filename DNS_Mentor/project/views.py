@@ -4,6 +4,8 @@ from mysql.connector import connect
 from django.shortcuts import render
 from .forms import MentorForm
 from django.http import HttpResponse
+from django.db.models import Q
+from django.db.models.query import QuerySet
 
 
 # ментор
@@ -24,35 +26,11 @@ def catalog(request):
 
     cursor.execute("SELECT * FROM mentors ORDER BY id ASC")
     search_query = request.GET.get('q', '')
-    mentors = ""
     if search_query:
-        search_input_list = search_query.split()
-        search = "SELECT id, mentor_telegram, mentor_surname, mentor_name, sphere FROM mentors"
-        cursor.execute(search)
-        mentor_search_list = cursor.fetchall()
-        for mentor in mentor_search_list:
-            ment = str(mentor)
-            ment = ment.lower()
-            i = 1
-            id = ""
-            replace = "("
-            while ment[i] != ',':
-                replace += ment[i]
-                id += ment[i]
-                i += 1
-            replace += ', '
-            ment = ment.replace(replace, '(', 1)
-            for j in search_input_list:
-                j = j.lower()
-                if ment.find(j) > -1:
-                    mentor_found = f"""
-                                SELECT * FROM mentors
-                                WHERE id = {id}
-                                """
-                    cursor.execute(mentor_found)
-                    mentors += cursor.fetchall()[0]
-                    break
-        search_input_list.clear()
+        mentors = MentorForm.objects.filter(Q(mentor_telegram__icontains=search_query) |
+                                            Q(mentor_surname__icontains=search_query) |
+                                            Q(mentor_name__icontains=search_query) |
+                                            Q(sphere__icontains=search_query))
     else:
         mentors = cursor.fetchall()
 
