@@ -3,6 +3,7 @@ from .models import Mentor
 
 
 class MentorForm(forms.Form):
+    model = Mentor()
     first_name = forms.CharField(max_length=50)
     last_name = forms.CharField(max_length=50)
     email = forms.EmailField()

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
@@ -13,7 +13,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
 
    <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>
      <!-- <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script> -->
@@ -31,10 +32,10 @@
             <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>   -->
           </div>
             <nav class="nav">
-              <a class="nav_link" href="catalog.html">Каталог</a>
-              <a class="nav_link" href="#" id="open_pop_up">Стать ментором</a>
+                <a class="nav_link" href="catalog.html">Каталог</a>
+                <a class="nav_link" href="#" id="open_pop_up">Стать ментором</a>
             </nav>
-  
+
             <div class="burger-menu">
   
               <button id="burger">
@@ -88,7 +89,6 @@
               </div>
     
             </div>
-          </div>
         </div>
   
       </div>
@@ -215,16 +215,129 @@
         </div>
       </div>
     </div>
+</header>
 
-    <div class="footer">
-      <a href="https://t.me/fredy129053" class="links">Telegram bot</a>
-      <span>|</span>
-      <a href="#" class="likns">DNS</a>
-      <br><br>
-      <span>Удачной встречи!</span>
-      <br>
-      
-  </div>
+<div class="catalog">
+    <div class="container">
+        <div class="catalog-holder">
+            <div class="catalog-title">Каталог менторов</div>
+                <div class="search-line">
+                    <form action="{% url 'catalog' %}">
+                        <input name="q" type="search" placeholder="Искать по сфере, навыку или программе...">
+                        <button type="submit" value="Send">
+                            <!-- <img src="styles/images/search.png"> -->
+                            <img src="{% static 'styles/images/search.png' %}">
+                        </button>
+                    </form>
+
+                    <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
+                        <option>Data Science</option>
+                        <option>Frontend</option>
+                        <option>Backend</option>
+                    </select>
+
+                    <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Цена'>
+                        <option>Бесплатно</option>
+                        <option>1-1000 рублей</option>
+                        <option>1000-2000 рублей</option>
+                        <option>2000-5000 рублей</option>
+                        <option>5000-8000 рублей</option>
+                        <option>По договорённости</option>
+                    </select>
+
+                    <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Опыт'>
+                        <option>Меньше года</option>
+                        <option>1 год</option>
+                        <option>2 года</option>
+                        <option>3 года</option>
+                        <option>4 года</option>
+                        <option>5 лет</option>
+                        <option>6 лет</option>
+                        <option>7 лет</option>
+                        <option>8 лет</option>
+                        <option>9 лет</option>
+                        <option>10 лет</option>
+                    </select>
+                </div>
+
+            <div class="catalog-list">
+            {% for mentor in mentors.reverse %}
+
+                <div class="catalog-person">
+                    <div class="person-holder">
+                        <div class="person-right">
+                            <div class="catalog-person-image">
+                                <a href="#">
+                                    <!--              <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">-->
+                                    <img class="catalog-person-img"
+                                         src="{% static 'styles/images/placeholder-cat.jpg' %}" alt="">
+                                </a>
+                            </div>
+                            <div class="catalog-person-info">
+                                <div class="catalog-person-name">
+<!--                                    Максим Новиков-->
+<!--                                    {{ mentor.5 }} {{ mentor.4 }}-->
+                                    {{ mentor.mentor_name }} {{ mentor.mentor_surname }}
+                                </div>
+                                <div class="catalog-person-fields">
+<!--                                    Дизайн, Backend, Data Science-->
+<!--                                    {{ mentor.9 }}-->
+                                    {{ mentor.sphere }}
+                                </div>
+                                <div class=catalog-person-stats>
+                                    <div class="catalog-person-experience">
+                                        Опыт:
+                                        <div class="catalog-person-exp">
+<!--                                            5 лет-->
+<!--                                             {{ mentor.7 }} лет-->
+                                             {{ mentor.experience }} лет
+                                        </div>
+                                    </div>
+                                    <div class="catalog-person-money">
+                                        Оплата:
+                                        <div class="catalog-person-mon">
+<!--                                            По договорённости-->
+<!--                                             {{ mentor.6 }}-->
+                                             {{ mentor.price }}
+                                        </div>
+                                    </div>
+                                    <div class="catalog-person-helped">
+                                        Обратились:
+                                        <div class="catalog-person-help">
+<!--                                            54 человека-->
+<!--                                             {{ mentor.8 }} человек-->
+                                             {{ mentor.number_of_rescued }} человек
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog-button">
+                            <a class="catalog-btn" href="#">
+                                <!--              <img class="message" src="styles/images/message.png">-->
+                                <img class="message" src="{% static 'styles/images/message.png' %}" alt="">
+                                <div class="message-text">
+                                    Оставить заявку
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="https://t.me/fredy129053" class="links">Telegram bot</a>
+    <span>|</span>
+    <a href="#" class="likns">DNS</a>
+    <br><br>
+    <span>Удачной встречи!</span>
+    <br>
+</div>
 
   <script src="styles/js/main.js"></script>
   <script src="styles/js/burger.js"></script>

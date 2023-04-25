@@ -1,11 +1,19 @@
+import mysql
+
 from django.db import models
+from mysql.connector import connect
 
 
 class Mentor(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.EmailField()
-    telegram = models.CharField(max_length=30)
-    profession = models.TextField()
-    about = models.TextField()
+    objects = models.Manager()
+    mentor_name = models.CharField(max_length=50)
+    mentor_surname = models.CharField(max_length=50)
+    mentor_telegram = models.CharField(max_length=30)
+    experience = models.IntegerField()
+    sphere = models.TextField()
+    price = models.CharField(max_length=50)
+    number_of_rescued = models.FloatField()
+
+    class Meta:
+        db_table = 'mentors'
 
