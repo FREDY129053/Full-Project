@@ -139,7 +139,7 @@
         </div>
   
       </div>
-  
+    </div>
     </header>
 
     <div class="catalog">
@@ -153,7 +153,7 @@
         <div class="search-line">
 
         
-          <form action="{% url 'catalog' %}">
+          <form class="search" action="{% url 'catalog' %}">
             <input class="catalog-input" name="q" type="search" placeholder="Искать по сфере, навыку или программе..." autocomplete="off">
           <button type="submit" value="Send">
             <!--НЕ ТРОГАТЬ-->
@@ -162,11 +162,14 @@
           </button>
         </form>
 
-        <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
-          <option value="Data Science">Data Science</option>
-          <option value="Frontend">Frontend</option>
-          <option value="Backend">Backend</option>
-        </select>
+        <form class="first_filter" action="">
+            <select class="first_drop" name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
+              <option value="Data Science">Data Science</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+            </select>
+            <button class="first_filter_btn" type="submit" style="padding-top: 60px;">Применить</button>
+        </form>
 
         <select name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Цена'>
           <option>По договорённости</option>
