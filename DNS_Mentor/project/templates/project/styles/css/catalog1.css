@@ -96,13 +96,8 @@ body{
 
 /* поле поиска */
 
-input::-webkit-input-placeholder {
-  color: #8C8C8C; 
-}
 
-input {
-  color: #333333;
-}
+
 
 * {box-sizing: border-box;}
 form {
