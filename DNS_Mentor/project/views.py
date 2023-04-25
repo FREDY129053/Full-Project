@@ -3,6 +3,7 @@ import mysql
 from mysql.connector import connect
 from django.shortcuts import render
 from .forms import MentorForm
+from .models import Mentor
 from django.http import HttpResponse
 from django.db.models import Q
 from django.db.models.query import QuerySet
@@ -15,25 +16,15 @@ def mentor(request):
 
 # каталог
 def catalog(request):
-    db_config = {
-        "user": "me",
-        "password": "password",
-        "host": "193.124.118.138",
-        "database": "project",
-    }
-    db = mysql.connector.connect(**db_config)
-    cursor = db.cursor(buffered=True)
-
-    cursor.execute("SELECT * FROM mentors ORDER BY id ASC")
     search_query = request.GET.get('q', '')
     if search_query:
-        mentors = MentorForm.objects.filter(Q(mentor_telegram__icontains=search_query) |
-                                            Q(mentor_surname__icontains=search_query) |
-                                            Q(mentor_name__icontains=search_query) |
-                                            Q(sphere__icontains=search_query))
+        mentors = Mentor.objects.filter(Q(mentor_surname__icontains=search_query) |
+                                        Q(mentor_name__icontains=search_query) |
+                                        Q(sphere__icontains=search_query))
     else:
-        mentors = cursor.fetchall()
+        mentors = Mentor.objects.all()
 
+    print(mentors)
     context = {'mentors': mentors}
     return render(request, 'project/catalog.html', context)
 
@@ -55,16 +46,16 @@ def about(request):
 
 
 # не рабочая штука с анкетой пользователя
-def index(request):
-    if request.method == 'POST':
-        form = MentorForm(request.POST)
-        if form.is_valid():
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            email = form.cleaned_data['email']
-            telegram = form.cleaned_data['first_name']
-            profession = form.cleaned_data['profession']
-            about_me = form.cleaned_data['about_me']
-        else:
-            form = MentorForm()
-        return render(request, 'mentor.html', {'form': form})
+# def index(request):
+#     if request.method == 'POST':
+#         form = MentorForm(request.POST)
+#         if form.is_valid():
+#             first_name = form.cleaned_data['first_name']
+#             last_name = form.cleaned_data['last_name']
+#             email = form.cleaned_data['email']
+#             telegram = form.cleaned_data['first_name']
+#             profession = form.cleaned_data['profession']
+#             about_me = form.cleaned_data['about_me']
+#         else:
+#             form = MentorForm()
+#         return render(request, 'mentor.html', {'form': form})

@@ -126,7 +126,7 @@
                 </div>
 
             <div class="catalog-list">
-            {% for mentor in mentors %}
+            {% for mentor in mentors.reverse %}
 
                 <div class="catalog-person">
                     <div class="person-holder">
@@ -141,32 +141,37 @@
                             <div class="catalog-person-info">
                                 <div class="catalog-person-name">
 <!--                                    Максим Новиков-->
-                                    {{ mentor.5 }} {{ mentor.4 }}
+<!--                                    {{ mentor.5 }} {{ mentor.4 }}-->
+                                    {{ mentor.mentor_name }} {{ mentor.mentor_surname }}
                                 </div>
                                 <div class="catalog-person-fields">
 <!--                                    Дизайн, Backend, Data Science-->
-                                    {{ mentor.9 }}
+<!--                                    {{ mentor.9 }}-->
+                                    {{ mentor.sphere }}
                                 </div>
                                 <div class=catalog-person-stats>
                                     <div class="catalog-person-experience">
                                         Опыт:
                                         <div class="catalog-person-exp">
 <!--                                            5 лет-->
-                                             {{ mentor.7 }} лет
+<!--                                             {{ mentor.7 }} лет-->
+                                             {{ mentor.experience }} лет
                                         </div>
                                     </div>
                                     <div class="catalog-person-money">
                                         Оплата:
                                         <div class="catalog-person-mon">
 <!--                                            По договорённости-->
-                                             {{ mentor.6 }}
+<!--                                             {{ mentor.6 }}-->
+                                             {{ mentor.price }}
                                         </div>
                                     </div>
                                     <div class="catalog-person-helped">
                                         Обратились:
                                         <div class="catalog-person-help">
 <!--                                            54 человека-->
-                                             {{ mentor.8 }} человек
+<!--                                             {{ mentor.8 }} человек-->
+                                             {{ mentor.number_of_rescued }} человек
                                         </div>
                                     </div>
                                 </div>
