@@ -528,3 +528,8 @@ button{
     .pop_up_body input:focus{
       outline: none;
     }
+	
+	.links{
+          text-decoration: none;
+          color: #FD890A;
+        }
