@@ -5,16 +5,20 @@
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-<!--    <link rel="stylesheet" href="styles/css/catalog1.css">-->
-    <link rel="stylesheet" href="{% static 'styles\css\catalog1.css' %}">
+    <link rel="stylesheet" href="styles/css/catalog1.css">
+    <!-- <link rel="stylesheet" href="{% static 'styles\css\catalog1.css' %}"> -->
+
+    <link rel="stylesheet" href="styles/css/inquiry.css">
+    <!-- <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-<!--    <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>-->
-     <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script>
+   <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>
+     <!-- <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script> -->
 
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
   </head>
   <body>
@@ -23,8 +27,8 @@
       <div class="container">
         <div class="header_inner">
           <div class="header_logo">
-<!--            <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>-->
-             <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
+            <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
+            <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>   -->
           </div>
             <nav class="nav">
               <a class="nav_link" href="catalog.html">Каталог</a>
@@ -34,59 +38,61 @@
             <div class="burger-menu">
   
               <button id="burger">
-<!--                <img src="styles/images/menu-icon.svg" alt="">-->
-                 <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
+                <img src="styles/images/menu-icon.svg" alt="">
+                <!-- <img src="{% static 'styles/images/menu-icon.svg' %}" alt=""> -->
               </button>
   
   
               <div id="menu" class="burger-slide disp">
                 <a class="nav_link block" href="catalog.html">Каталог</a>
-                <a class="nav_link block" href="#">Стать ментором</a>
+                <a class="nav_link block" href="#" id="open_pop_up_burger">Стать ментором</a>
               </div>
   
             </div>
         </div> 
+        
         <div class="pop_up" id="pop_up">
-          <div class="pop_up_container">
-            <div class="pop_up_body" id="pop_up_body">
-              <p class="temp">Заполните <span class="text">анкету</span></p>
-              <p1 class="main">После отправления запроса мы его тщательно осмотрим,</p1>
-              <br>
-              <p1 class="man">  если он будет принят, вам в Telegram придёт оповещение.</p1>
-            
-              <form action="">
-                <div class="btn-group">
-                  <input type="text" class="name" placeholder="Имя">
-                  <input type="text" class="surname" placeholder="Фамилия">
+          <div class="inquiry-box">
+              <div class="inquiry-text">
+                
+                <div class="inquiry-title">
+                  Заполните анкету
+                  <div class="pop_up_close" id="pop_up_close">&#10006</div>
                 </div>
-      
-                <div class="btn-group">
-                  <input type="text" class="telegram" placeholder="@Telegram">
-                  <input type="text" class="email" placeholder="E-mail">
+                <div class="inquiry-subtitle">
+                  После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение в Telegram.
                 </div>
-      
-                <div class="btn-group">
-                  <input type="text" class="price" placeholder="цена услуги">
-                  <input type="text" class="experience" placeholder="опыт работы">
-                </div>
+              </div>
+    
+              <div class="inquiry-top">
+                <input type="text" class="field" placeholder="Имя" autocomplete="off">
+                <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
+                <input type="email" class="field" placeholder="Your email" autocomplete="off">
+                <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
+                <input type="text" class="field" placeholder="Цена услуги" autocomplete="off">
+                <input type="text" class="field" placeholder="Опыт работы" autocomplete="off">
+              </div>
+    
+              <div class="inquiry-bottom">
+                <textarea class="field" placeholder="Сферы (перечислите через запятую)"></textarea>
+                <textarea class="field" placeholder="Расскажите о себе"></textarea>
                 
-              
-                <textarea class="field" placeholder="Сферы(через запятую)"></textarea>
-                <textarea class="about" placeholder="О себе"></textarea>
-                <p class="add">Добавьте фотографию(png, jpeg)</p>
-                
-                <input type="file" class="photo">
-                
-                
-                
-                <button>отправить</button>
-      
-              </form>
-              <div class="pop_up_close" id="pop_up_close">&#10006</div>
+                <label for="images" class="drop-container">
+                  <span class="drop-title">Перетащите фото</span>
+                  или
+                  <input type="file" id="images" accept="image/*" required>
+                </label>
+    
+              <div class="inquiry-button">
+                <button class="inquiry-btn">Отправить заявку</button>
+              </div>
+    
             </div>
           </div>
         </div>
-      </div> 
+  
+      </div>
+  
     </header>
 
     <div class="catalog">
@@ -100,12 +106,11 @@
         <div class="search-line">
 
         
-        <form method="post" action="postsearch/">
-	  {% csrf_token %}
-          <input type="text" placeholder="Искать по сфере, навыку или программе...">
+          <form action="{% url 'catalog' %}">
+            <input name="q" type="search" placeholder="Искать по сфере, навыку или программе..." autocomplete="off">
           <button type="submit" value="Send">
             <!-- <img src="styles/images/search.png"> -->
-             <img src="{% static 'styles/images/search.png' %}">
+             <!-- <img src="{% static 'styles/images/search.png' %}"> -->
           </button>
         </form>
 
@@ -141,26 +146,29 @@
         </div>
 
         <div class="catalog-list">
+          {% for mentor in mentors %}
         <div class="catalog-person">
 
           <div class="person-holder">
 
             <div class="person-right">
           <div class="catalog-person-image">
-            <a href="#">
-<!--              <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">-->
-               <img class="catalog-person-img" src="{% static 'styles/images/placeholder-cat.jpg' %}" alt="">
+            <a href="mentor.html">
+             <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">
+               <!-- <img class="catalog-person-img" src="{% static 'styles/images/placeholder-cat.jpg' %}" alt=""> -->
             </a>
             
           </div>
 
           <div class="catalog-person-info">
             <div class="catalog-person-name">
-              Максим Новиков
+              <!-- Максим Новиков -->
+              {{ mentor.mentor_name }} {{ mentor.mentor_surname }}
             </div>
 
             <div class="catalog-person-fields">
-              Дизайн, Backend, Data Science
+              <!-- Дизайн, Backend, Data Science -->
+              {{ mentor.sphere }}
             </div>
 
             <div class=catalog-person-stats>
@@ -168,17 +176,17 @@
             
             <div class="catalog-person-experience">
               Опыт: 
-              <div class="catalog-person-exp">5 лет</div>
+              <div class="catalog-person-exp">{{ mentor.experience }} лет</div>
             </div>
 
             <div class="catalog-person-money">
               Оплата: 
-              <div class="catalog-person-mon">По договорённости</div>
+              <div class="catalog-person-mon">{{ mentor.price }}</div>
             </div>
 
             <div class="catalog-person-helped">
               Обратились: 
-              <div class="catalog-person-help">54 человека</div>
+              <div class="catalog-person-help">{{ mentor.number_of_rescued }} человек</div>
             </div>
 
           </div>
@@ -186,9 +194,9 @@
           </div>
 
           <div class="catalog-button">
-            <a class="catalog-btn" href="#">
-<!--              <img class="message" src="styles/images/message.png">-->
-               <img class="message" src="{% static 'styles/images/message.png' %}" alt="">
+            <a class="catalog-btn" href="mentor.html">
+             <img class="message" src="styles/images/message.png">
+               <!-- <img class="message" src="{% static 'styles/images/message.png' %}" alt=""> -->
               <div class="message-text">Оставить заявку</div> 
             </a>
           </div>
@@ -203,6 +211,7 @@
         
 
         </div>
+        {% endfor %}
         </div>
       </div>
     </div>
@@ -217,7 +226,10 @@
       
   </div>
 
-<!--    <script src="styles/js/burger.js"></script>-->
-     <script src="{% static 'styles/js/burger.js' %}"></script>
+  <script src="styles/js/main.js"></script>
+  <script src="styles/js/burger.js"></script>
+
+  <!-- <script src="{% static 'styles/js/main.js' %}"></script>
+  <script src="{%static 'styles/js/burger.js' %}"></script> -->
   </body>
 </html>

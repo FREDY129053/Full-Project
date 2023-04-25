@@ -4,124 +4,195 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница ментора</title>
 
-<!--    <link rel="stylesheet" href="styles/css/mentor.css">-->
-     <link rel="stylesheet" href="{% static 'styles/css/mentor.css' %}">
+     <link rel="stylesheet" href="styles/css/mentor.css">
+     <!-- <link rel="stylesheet" href="{% static 'styles/css/mentor.css' %}"> -->
+
+     <link rel="stylesheet" href="styles/css/inquiry.css">
+     <!-- <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
 </head>
 <body>
-    <header>
+
+  <header class="header">
 		<div class="container">
 			<div class="header_inner">
 				<div class="header_logo">
 					<a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
-          <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a> -->
+          <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>   -->
 				</div>
 					<nav class="nav">
 						<a class="nav_link" href="catalog.html">Каталог</a>
-						<a class="nav_link" href="#" id="open_pop_up_a">Стать ментором</a>
+						<a class="nav_link" href="#" id="open_pop_up">Стать ментором</a>
 					</nav>
-                    <div class="pop_up_a" id="pop_up_a">
-                        <div class="pop_up_container_a">
-                          <div class="pop_up_body_a" id="pop_up_body">
-                            <p class="temp_a">Заполните <span class="text_a">анкету</span></p>
-                            <p1 class="main_a">После отправления запроса мы его тщательно осмотрим,</p1>
-                            <br>
-                            <p1 class="man_a">  если он будет принят, вам в Telegram придёт оповещение.</p1>
-                          
-                            <form action="">
-                              <div class="btn-group">
-                                <input type="text" class="name_a" placeholder="Имя">
-                                <input type="text" class="surname_a" placeholder="Фамилия">
-                              </div>
-                    
-                              <div class="btn-group">
-                                <input type="text" class="telegram_a" placeholder="@Telegram">
-                                <input type="text" class="email_a" placeholder="E-mail">
-                              </div>
-                    
-                              <div class="btn-group">
-                                <input type="text" class="price_a" placeholder="цена услуги">
-                                <input type="text" class="experience_a" placeholder="опыт работы">
-                              </div>
-                              
-                            
-                              <textarea class="field_a" placeholder="Сферы(через запятую)"></textarea>
-                              <textarea class="about_a" placeholder="О себе"></textarea>
-                              <p class="add_a">Добавьте фотографию(png, jpeg)</p>
-                              
-                              <input type="file" class="photo_a">
-                              
-                              
-                              
-                              <button>отправить</button>
-                    
-                            </form>
-                            <div class="pop_up_close_a" id="pop_up_close_a">&#10006</div>
-                          </div>
-                        </div>
-                      </div>
-			</div>
+
+          <div class="burger-menu">
+
+            <button id="burger">
+              <img src="styles/images/menu-icon.svg" alt="">
+              <!-- <img src="{% static 'styles/images/menu-icon.svg' %}" alt=""> -->
+            </button>
+
+
+            <div id="menu" class="burger-slide disp">
+              <a class="nav_link block" href="catalog.html">Каталог</a>
+              <a class="nav_link block" href="#" id="open_pop_up_burger">Стать ментором</a>
+            </div>
+
+          </div>
+			</div> 
+      
+      <div class="pop_up" id="pop_up">
+        <div class="inquiry-box">
+            <div class="inquiry-text">
+              
+              <div class="inquiry-title">
+                Заполните анкету
+                <div class="pop_up_close" id="pop_up_close">&#10006</div>
+              </div>
+              <div class="inquiry-subtitle">
+                После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение в Telegram.
+              </div>
+            </div>
+  
+            <div class="inquiry-top">
+              <input type="text" class="field" placeholder="Имя" autocomplete="off">
+              <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
+              <input type="email" class="field" placeholder="Your email" autocomplete="off">
+              <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
+              <input type="text" class="field" placeholder="Цена услуги" autocomplete="off">
+              <input type="text" class="field" placeholder="Опыт работы" autocomplete="off">
+            </div>
+  
+            <div class="inquiry-bottom">
+              <textarea class="field" placeholder="Сферы (перечислите через запятую)"></textarea>
+              <textarea class="field" placeholder="Расскажите о себе"></textarea>
+              
+              <label for="images" class="drop-container">
+                <span class="drop-title">Перетащите фото</span>
+                или
+                <input type="file" id="images" accept="image/*" required>
+              </label>
+  
+            <div class="inquiry-button">
+              <button class="inquiry-btn">Отправить заявку</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+
 		</div>
+
 	</header>
 
     <div class="info">
-        <p class="name">
+      <div class="container">
+
+        <div class="info-holder">
+        <div class="info-left">
+
+          <div class="img-mobile">
+            <img class="image" src="styles/images/23oQj0MKQy8.jpg" alt="">
+            <!-- <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt=""> -->
+        </div>
+
+        <div class="mentor-name">
             Иванов Илья Сергеевич
-        </p>
-        <p class="spheres">
+        </div>
+
+        <div class="mentor-fields">
             дизайн, разработка приложений, ебырь твоей мамы, собутыльник твоего деда, поддельник бати
-        </p>
-        <ul class="list">
-            <li>Опыт работы:</li>
-            <li>Цена услуги:</li>
-            <li>Получили помощь:</li>
-        </ul>
+        </div>
+
+        <div class="mentor-stats">
+
+          <div class="mentor-experience">
+
+            Опыт работы:
+            <div class="mentor-exp"> данные из сервера</div>
+
+          </div>
+
+          <div class="mentor-money">
+
+            Цена услуги:
+            <div class="mentor-mon"> данные из сервера</div>
+
+          </div>
+
+          <div class="mentor-helped">
+
+            Получили помощь:
+            <div class="mentor-help"> данные из сервера</div>
+
+          </div>
+
+        </div>
+
+        
+
+        <div class="button">
+          <a href="#" id="open_pop_up">оставить заявку</a>
+        </div>
+
+        </div>
+
+        <div class="pop_up" id="pop_up">
+          <div class="pop_up_container">
+            <div class="pop_up_body" id="pop_up_body">
+              <p class="temp">Заполните <span class="text">заявку</span></p>
+              <p1 class="main">Надеемся, ментор как можно скорее ответит на ваш запрос.</p1>
+              <br>
+              <p1 class="man">Уведомление придет на почту или в телеграм.</p1>
+            
+              <form action="">
+                <div class="btn-group">
+                  <input type="text" class="name_blank" placeholder="Имя">
+                  <input type="text" class="surname" placeholder="Фамилия">
+                </div>
+      
+                <div class="btn-group">
+                  <input type="text" class="telegram" placeholder="@Telegram">
+                  <input type="text" class="email" placeholder="E-mail">
+                </div>
+                
+                <p>
+                  <label for="date" class="label">Дата встречи:</label>
+                  <input type="date" id="date" class="date">
+                </p>
+
+                <button>отправить</button>
+      
+              </form>
+              <div class="pop_up_close" id="pop_up_close">&#10006</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-right">
+
         <div class="img">
             <img class="image" src="styles/images/23oQj0MKQy8.jpg" alt="">
             <!-- <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt=""> -->
         </div>
-        <div class="button">
-            <a href="#" id="open_pop_up">оставить заявку</a>
-        </div> 
-        <div class="pop_up" id="pop_up">
-            <div class="pop_up_container">
-              <div class="pop_up_body" id="pop_up_body">
-                <p class="temp">Заполните <span class="text">заявку</span></p>
-                <p1 class="main">Надеемся, ментор как можно скорее ответит на ваш запрос.</p1>
-                <br>
-                <p1 class="man">Уведомление придет на почту или в телеграм.</p1>
-              
-                <form action="">
-                  <div class="btn-group">
-                    <input type="text" class="name_blank" placeholder="Имя">
-                    <input type="text" class="surname" placeholder="Фамилия">
-                  </div>
-        
-                  <div class="btn-group">
-                    <input type="text" class="telegram" placeholder="@Telegram">
-                    <input type="text" class="email" placeholder="E-mail">
-                  </div>
-                  
-                  <p>
-                    <label for="date" class="label">Дата встречи:</label>
-                    <input type="date" id="date" class="date">
-                  </p>
 
-                  <button>отправить</button>
+        </div>
+
+        </div>
+
         
-                </form>
-                <div class="pop_up_close" id="pop_up_close">&#10006</div>
-              </div>
-            </div>
-          </div>
+        </div>
     </div>
-    <div class="about">
+    <div class="mentor-about">
+      <div class="container">
         <p class="myself">О себе</p>
         <p class="skills">
             Имею высшее образование в области разработки игр и большое количество курсов и тренингов, направленных на повышение квалификации в различных технических и менеджмент-направлениях. Общий опыт работы в игровой индустрии более 10 лет, в том числе более 5 лет на руководящих позициях.
@@ -146,6 +217,7 @@
             <li>Внедрение системы постановки целей OKR;</li>
             <li>Подбор и адаптация членов команды, с учетом ценностей компании;</li>
         </ul>
+      </div>
     </div>
     <div class="footer">
         <a href="https://t.me/fredy129053" class="links">Telegram bot</a>
@@ -154,11 +226,12 @@
         <br><br>
         <span>Удачной встречи!</span>
         <br>
-        <img src="static 'styles/images/Handshake.svg" alt="встреча" width="50%" height="150%">
-        <!-- <img src="{% static 'styles/images/Handshake.svg' %}" alt="встреча" width="50%" height="150%"> -->
     </div>
 
-<script src="styles/js/main.js"></script>
-<!-- <script src="%{ static 'styles/js/main.js' %}"></script> -->
+    <script src="styles/js/main.js"></script>
+    <script src="styles/js/burger.js"></script>
+
+    <!-- <script src="{% static 'styles/js/main.js' %}"></script>
+    <script src="{%static 'styles/js/burger.js' %}"></script> -->
 </body>
 </html>

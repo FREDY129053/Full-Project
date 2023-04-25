@@ -7,15 +7,16 @@
 
     <link rel="stylesheet" href="styles/css/styles.css">
     <!-- <link rel="stylesheet" href="{% static 'styles/css/styles.css' %}"> -->
-    <link rel="stylesheet" href="styles/css/styles.css">
-    <!-- <link rel="stylesheet" href="{% static 'styles/css/styles.css' %}"> -->
 
+    <link rel="stylesheet" href="styles/css/inquiry.css">
+    <!-- <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}"> -->
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
   </head>
   <body>
 
@@ -42,52 +43,54 @@
 
             <div id="menu" class="burger-slide disp">
               <a class="nav_link block" href="catalog.html">Каталог</a>
-              <a class="nav_link block" href="#">Стать ментором</a>
+              <a class="nav_link block" href="#" id="open_pop_up_burger">Стать ментором</a>
             </div>
 
           </div>
 			</div> 
+      
       <div class="pop_up" id="pop_up">
-        <div class="pop_up_container">
-          <div class="pop_up_body" id="pop_up_body">
-            <p class="temp">Заполните <span class="text">анкету</span></p>
-            <p1 class="main">После отправления запроса мы его тщательно осмотрим,</p1>
-            <br>
-            <p1 class="man">  если он будет принят, вам в Telegram придёт оповещение.</p1>
-          
-            <form action="">
-              <div class="btn-group">
-                <input type="text" class="name" placeholder="Имя">
-                <input type="text" class="surname" placeholder="Фамилия">
+        <div class="inquiry-box">
+            <div class="inquiry-text">
+              
+              <div class="inquiry-title">
+                Заполните анкету
+                <div class="pop_up_close" id="pop_up_close">&#10006</div>
               </div>
-    
-              <div class="btn-group">
-                <input type="text" class="telegram" placeholder="@Telegram">
-                <input type="text" class="email" placeholder="E-mail">
+              <div class="inquiry-subtitle">
+                После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение в Telegram.
               </div>
-    
-              <div class="btn-group">
-                <input type="text" class="price" placeholder="цена услуги">
-                <input type="text" class="experience" placeholder="опыт работы">
-              </div>
+            </div>
+  
+            <div class="inquiry-top">
+              <input type="text" class="field" placeholder="Имя" autocomplete="off">
+              <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
+              <input type="email" class="field" placeholder="Your email" autocomplete="off">
+              <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
+              <input type="text" class="field" placeholder="Цена услуги" autocomplete="off">
+              <input type="text" class="field" placeholder="Опыт работы" autocomplete="off">
+            </div>
+  
+            <div class="inquiry-bottom">
+              <textarea class="field" placeholder="Сферы (перечислите через запятую)"></textarea>
+              <textarea class="field" placeholder="Расскажите о себе"></textarea>
               
-            
-              <textarea class="field" placeholder="Сферы(через запятую)"></textarea>
-              <textarea class="about" placeholder="О себе"></textarea>
-              <p class="add">Добавьте фотографию(png, jpeg)</p>
-              
-              <input type="file" class="photo">
-              
-              
-              
-              <button>отправить</button>
-    
-            </form>
-            <div class="pop_up_close" id="pop_up_close">&#10006</div>
+              <label for="images" class="drop-container">
+                <span class="drop-title">Перетащите фото</span>
+                или
+                <input type="file" id="images" accept="image/*" required>
+              </label>
+  
+            <div class="inquiry-button">
+              <button class="inquiry-btn">Отправить заявку</button>
+            </div>
+  
           </div>
         </div>
       </div>
-		</div> 
+
+		</div>
+
 	</header>
 
     <div class="introduction">
@@ -212,6 +215,7 @@
       
       <div class="faq-block">
         <div class="question">
+          <img class="faq_img" src="styles/images/free-icon-bulb-1141787.png" alt="">
           Как узнать о менторе подробнее?
         </div>
 
@@ -222,6 +226,7 @@
 
       <div class="faq-block">
         <div class="question">
+          <img class="faq_img" src="styles/images/free-icon-bulb-1141787.png" alt="">
           Как стать ментором?
         </div>
 
@@ -232,6 +237,7 @@
 
       <div class="faq-block">
         <div class="question">
+          <img class="faq_img" src="styles/images/free-icon-bulb-1141787.png" alt="">
           Как скоро я попаду в каталог?
         </div>
 
@@ -242,26 +248,29 @@
 
       <div class="faq-block">
         <div class="question">
+          <img class="faq_img" src="styles/images/free-icon-bulb-1141787.png" alt="">
           Как происходит коммуникация между мной и ментором?
         </div>
 
         <div class="answer">
-          Вся коммуникация происходит через Телеграмм-бота, точнее он даёт Вам понять текущее состояние о Ваших заявках.
+          Вся коммуникация происходит через Телеграм-бота, точнее он даёт Вам понять текущее состояние о Ваших заявках.
         </div>
       </div>
 
       <div class="faq-block">
         <div class="question">
+          <img class="faq_img" src="styles/images/free-icon-bulb-1141787.png" alt="">
           Нет Телеграмма. Что делать?
         </div>
 
         <div class="answer">
-          Если у Вас нет Телеграмма, то бот отправляет информацию на указанную Вами почту. Но настоятельно рекомендуем перед началом работы с сервисом всё-таки перейти в Телеграмм-бота и нажать /start.
+          Если у Вас нет Телеграма, то бот отправляет информацию на указанную Вами почту. Но настоятельно рекомендуем перед началом работы с сервисом всё-таки перейти в Телеграм-бота и нажать /start.
         </div>
       </div>
 
       <div class="faq-block">
         <div class="question">
+          <img class="faq_img" src="styles/images/free-icon-bulb-1141787.png" alt="">
           Что означает количество человек на карточке ментора и как оно считается?
         </div>
 
@@ -271,8 +280,9 @@
       </div>
 
     </div>
-
     </div>
+
+    
 
     <div class="footer">
       <a href="https://t.me/fredy129053" class="links">Telegram bot</a>
