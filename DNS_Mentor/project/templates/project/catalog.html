@@ -162,10 +162,14 @@
           </button>
         </form>
 
-        <form class="first_filter" action="">
+        <form class="first_filter" method="POST">
+<!--            <span class="first_filter">-->
+                {% csrf_token %}
+<!--                {{ form.as_p  }}-->
+<!--            </span>-->
             <select class="first_drop" name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
               <option value="Data Science">Data Science</option>
-              <option value="Frontend">Frontend</option>
+              <option value="Front-end">Front-end</option>
               <option value="Backend">Backend</option>
             </select>
             <button class="first_filter_btn" type="submit" style="padding-top: 60px;">Применить</button>

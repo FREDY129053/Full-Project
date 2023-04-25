@@ -110,19 +110,10 @@ body{
 }
 
 /* ПЕРВЫЙ ФИЛЬТР НА СФЕРЫ */
+
 .first_filter {
-    position: relative;
-
+    width: 80%;
 }
-
-.first_drop {
-    width: 10vw;
-}
-
-.first_filter_btn {
-    border-style: dashed;
-}
-
 /*          */
 
 input, button {

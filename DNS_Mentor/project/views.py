@@ -1,11 +1,9 @@
-import mysql
-
-from mysql.connector import connect
 from django.shortcuts import render
-from .forms import MentorForm
+from .forms import MyForm
 from .models import Mentor
 from django.http import HttpResponse
 from django.db.models import Q
+
 
 # ментор
 def mentor(request):
@@ -32,9 +30,16 @@ def catalog(request):
         else:
             mentors = Mentor.objects.all()
 
-    print(mentors)
-    context = {'mentors': mentors}
+    form = MyForm()
+    if request.method == 'POST':
+        form = MyForm(request.POST)
+        if form.is_valid():
+            selected_options = form.cleaned_data.get('my_field')
+            print(selected_options)
+
+    context = {'mentors': mentors, 'form': form}
     return render(request, 'project/catalog.html', context)
+
 
 # домашняя страница
 def home(request):
