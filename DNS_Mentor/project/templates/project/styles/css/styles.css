@@ -605,3 +605,23 @@ button{
   font-size: 3vb;
   font-weight: 500;
 }
+
+.links{
+  text-decoration: none;
+  color: #FD890A;
+}
+
+.faq{
+  padding: 2% 5% 2% 5%;
+}
+
+.faq-block{
+  text-align: left;
+  padding: 2% 20% 2% 25%;
+}
+
+.faq_img{
+  margin-left: -6%;
+  width: 5%;
+
+}
