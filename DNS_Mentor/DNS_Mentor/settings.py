@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'DNS_Mentor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'project',
+        'USER': 'me',
+        'PASSWORD': 'password',
+        'HOST': '193.124.118.138',
+        'PORT': '3306'
     }
 }
 
