@@ -1,4 +1,7 @@
+import mysql
+
 from django.db import models
+from mysql.connector import connect
 
 
 class Mentor(models.Model):
