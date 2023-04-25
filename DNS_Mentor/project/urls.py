@@ -8,6 +8,5 @@ urlpatterns = [
 	path('about/', about),
 	path('index/', index),
 	path('mentor/', mentor),
-	path('catalog/', catalog),
-	path('postsearch/', postsearch)
+	path('catalog/', catalog, name='catalog'),
 ]

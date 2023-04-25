@@ -23,10 +23,40 @@ def catalog(request):
     cursor = db.cursor(buffered=True)
 
     cursor.execute("SELECT * FROM mentors ORDER BY id ASC")
-    mentors = cursor.fetchall()
+    search_query = request.GET.get('q', '')
+    mentors = ""
+    if search_query:
+        search_input_list = search_query.split()
+        search = "SELECT id, mentor_telegram, mentor_surname, mentor_name, sphere FROM mentors"
+        cursor.execute(search)
+        mentor_search_list = cursor.fetchall()
+        for mentor in mentor_search_list:
+            ment = str(mentor)
+            ment = ment.lower()
+            i = 1
+            id = ""
+            replace = "("
+            while ment[i] != ',':
+                replace += ment[i]
+                id += ment[i]
+                i += 1
+            replace += ', '
+            ment = ment.replace(replace, '(', 1)
+            for j in search_input_list:
+                j = j.lower()
+                if ment.find(j) > -1:
+                    mentor_found = f"""
+                                SELECT * FROM mentors
+                                WHERE id = {id}
+                                """
+                    cursor.execute(mentor_found)
+                    mentors += cursor.fetchall()[0]
+                    break
+        search_input_list.clear()
+    else:
+        mentors = cursor.fetchall()
 
     context = {'mentors': mentors}
-
     return render(request, 'project/catalog.html', context)
 
 
