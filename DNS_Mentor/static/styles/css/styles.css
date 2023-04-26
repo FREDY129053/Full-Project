@@ -552,15 +552,7 @@ button{
           color: #333333;
         }
         
-        .footer{
-          height: 20vh;
-          background-color: #F7F7F7;
-          text-align: center;
-          padding: 5% 0 15% 0;
-          font-family: 'PT Sans';
-          font-size: 3vb;
-          font-weight: 500;
-        }
+
         
         .links{
           text-decoration: none;
@@ -581,3 +573,5 @@ button{
           width: 5%;
         
         }
+
+

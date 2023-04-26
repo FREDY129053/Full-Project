@@ -4,9 +4,11 @@ from .views import *
 
 # создание ссылок на страницы
 urlpatterns = [
-	path('', catalog),
+	path('', home),
 	path('about/', about),
-	# path('index/', index),
 	path('mentor/', mentor),
 	path('catalog/', catalog, name='catalog'),
+	path('index.html', home),
+	path('catalog.html', catalog),
+	path('mentor.html', mentor),
 ]
