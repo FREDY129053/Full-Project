@@ -4,6 +4,9 @@ from django.db import models
 from mysql.connector import connect
 
 
+
+
+
 class Mentor(models.Model):
     objects = models.Manager()
     mentor_name = models.CharField(max_length=50)
