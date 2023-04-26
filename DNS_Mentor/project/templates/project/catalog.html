@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-       <link rel="stylesheet" href="styles/css/catalog1.css">
-    <!-- <link rel="stylesheet" href="{% static 'styles\css\catalog1.css' %}"> -->
+<!--       <link rel="stylesheet" href="styles/css/catalog1.css">-->
+     <link rel="stylesheet" href="{% static 'styles\css\catalog1.css' %}">
 
-       <link rel="stylesheet" href="styles/css/inquiry.css">
-    <!-- <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}"> -->
+<!--       <link rel="stylesheet" href="styles/css/inquiry.css">-->
+     <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet">
 
-      <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>
-    <!-- <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script> -->
+<!--      <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>-->
+     <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
@@ -29,8 +29,8 @@
     <div class="container">
         <div class="header_inner">
             <div class="header_logo">
-                           <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
-                <!--<a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>-->
+<!--                           <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>-->
+                <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
             </div>
             <nav class="nav">
                 <a class="nav_link" href="catalog.html">Каталог</a>
@@ -40,8 +40,8 @@
             <div class="burger-menu">
   
               <button id="burger">
-                <img src="styles/images/menu-icon.svg" alt="">
-                <!-- <img src="{% static 'styles/images/menu-icon.svg' %}" alt=""> -->
+<!--                <img src="styles/images/menu-icon.svg" alt="">-->
+                 <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
               </button>
   
   
@@ -139,25 +139,6 @@
                           <option value="Middle">3-5 лет</option>
                           <option value="Senior">5+ лет</option>
                         </select>
-                          {% for option in options %}
-                        <option value="{{ option }}">{{ option }}</option>
-                          {% endfor %}
-                      </select>
-
-                      <select class="second_filter" name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Цена'>
-                        <option value="Undefined">По договорённости</option>
-                        <option value="Free">Бесплатно</option>
-                        <option value="Low">0-2999</option>
-                        <option value="Medium">3000-5999</option>
-                        <option value="High">6000 и более</option>
-                      </select>
-
-                      <select class="third_filter" name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Опыт'>
-                        <option value="Junior">1-2 года</option>
-                        <option value="Middle">3-5 лет</option>
-                        <option value="Senior">5+ лет</option>
-                      </select>
-
                         <button class="first_filter_btn" type="submit">Применить фильтры</button>
                 </form>
             </div>
@@ -171,9 +152,9 @@
                         <div class="person-right">
                             <div class="catalog-person-image">
                                 <a href="mentor.html">
-                                                <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">
-                                    <!-- <img class="catalog-person-img"
-                                         src="{% static 'styles/images/placeholder-cat.jpg' %}" alt=""> -->
+<!--                                                <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">-->
+                                     <img class="catalog-person-img"
+                                         src="{% static 'styles/images/placeholder-cat.jpg' %}" alt="">
                                 </a>
 
                             </div>
@@ -206,21 +187,6 @@
                                         Обратились:&nbsp;
                                         <div class="catalog-person-help">{{ mentor.number_of_rescued }} человек</div>
                                     </div>
-                                  <div class="catalog-person-experience">
-                                    Опыт:&nbsp;
-                                    <div class="catalog-person-exp">{{ mentor.experience }} лет</div>
-                                </div>
-
-                                <div class="catalog-person-money">
-                                    Оплата:&nbsp;
-                                    <div class="catalog-person-mon">{{ mentor.price }}</div>
-                                </div>
-
-                                <div class="catalog-person-helped">
-                                    Обратились:&nbsp;
-                                    <div class="catalog-person-help">{{ mentor.number_of_rescued }} человек</div>
-                                </div>
-
                                 </div>
                             </div>
                         </div>
@@ -228,8 +194,8 @@
                         <div class="catalog-button">
 <!--                            СЮДА ЕЕ НАДО!!!! -->
                             <a class="catalog-btn" href="#" id="open_pop_up_a">
-                                            <img class="message" src="styles/images/message.png">
-                                <!-- <img class="message" src="{% static 'styles/images/message.png' %}" alt=""> -->
+<!--                                            <img class="message" src="styles/images/message.png">-->
+                                 <img class="message" src="{% static 'styles/images/message.png' %}" alt="">
                                 <div class="message-text">Оставить заявку</div>
                             </a>                 
                         </div>
@@ -288,16 +254,11 @@
     <br>
 </div>
 
- <script src="styles/js/main.js"></script>
- <script src="styles/js/burger.js"></script>
+<!-- <script src="styles/js/main.js"></script>-->
+<!-- <script src="styles/js/burger.js"></script>-->
 
 <script src="{% static 'styles/js/main.js' %}"></script>
 <script src="{%static 'styles/js/burger.js' %}"></script>
 
-<!-- <script src="{% static 'styles/js/main.js' %}"></script>
-<script src="{%static 'styles/js/burger.js' %}"></script> -->
-</body>
-<!--    <script src="styles/js/burger.js"></script>-->
-<!-- <script src="{% static 'styles/js/burger.js' %}"></script> -->
 </body>
 </html>

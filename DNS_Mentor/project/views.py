@@ -71,8 +71,6 @@ def catalog(request):
             elif i == "Senior":
                 experiences.append(6)
                 experiences.append(10000)
-    if len(spheres) == 0:
-        spheres = temp_spheres
     if len(experiences) == 6:
         experiences.clear()
 
@@ -95,10 +93,14 @@ def catalog(request):
         prices_str.clear()
         prices_int.clear()
 
+
     if filters_query:
-        for i in spheres:
-            mentors_temp = mentors.filter(sphere__icontains=i)
-            mentors += mentors_temp
+        if spheres:
+            mentors_q = Q()
+            for i in spheres:
+                mentors_q |= Q(sphere__icontains=i)
+            mentors = mentors.filter(mentors_q)
+
 
         for i in prices_str:
             mentors = mentors.exclude(price__icontains=i)
