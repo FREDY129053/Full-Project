@@ -109,18 +109,56 @@ body{
   border-radius: 13px;
 }
 
-/* ПЕРВЫЙ ФИЛЬТР НА СФЕРЫ */
-
-.first_filter {
-    width: 80%;
+.search-line{
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
 }
-/*          */
+
+.filters {
+    padding-top: 1vh;
+}
+
+.first_filter_btn {
+    padding: 1% 2% 1%;
+    display: block;
+    margin: 1vh 0 0 9vw;
+    min-width: 3vw;
+    border-radius: 50px;
+    color: white;
+    background-color: #faa03f;
+
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+.first_filter_btn:hover {
+    transition: all 0.2s;
+    background-color: #fd890a;
+    cursor: pointer;
+}
+
+
+.first_filter, .second_filter, .third_filter {
+    width: 11vw;
+}
+
 
 input, button {
   border: none;
   outline: none;
 
 }
+
+/*button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+}*/
+
+
 input[class=catalog-input] {
   width: 100%;
   height: 2rem;
@@ -133,15 +171,6 @@ input[class=catalog-input] {
 
   color: #333333;
   border-radius: 13px;
-}
-
-
-
-.search-line{
-  display: flex;
-  justify-content: center;
-  gap: 4%;
-
 }
 
 select{
@@ -307,11 +336,7 @@ select{
   
 }
 
-button{
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
+
 
 .disp{
   display: none;
