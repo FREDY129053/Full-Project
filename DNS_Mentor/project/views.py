@@ -46,10 +46,7 @@ def catalog(request):
     mentors = Mentor.objects.all()
 
     spheres = []
-    # temp_spheres = ["Backend", "Frontend", "Data Science"]
     temp_spheres = [i.lstrip() for i in filters_values]
-    print(temp_spheres)
-    print(filters_query)
     experiences = []
     temp_experiences = ["Junior", "Middle", "Senior"]
     prices_str = []
@@ -61,7 +58,7 @@ def catalog(request):
             spheres.append(i)
 
     for i in temp_experiences:
-        if i not in filters_query:
+        if i in filters_query:
             if i == "Junior":
                 experiences.append(0)
                 experiences.append(2)
@@ -70,9 +67,7 @@ def catalog(request):
                 experiences.append(5)
             elif i == "Senior":
                 experiences.append(6)
-                experiences.append(10000)
-    if len(experiences) == 6:
-        experiences.clear()
+                experiences.append(1000000000000)
 
     for i in temp_prices:
         if i not in filters_query:
@@ -96,19 +91,21 @@ def catalog(request):
 
     if filters_query:
         if spheres:
-            mentors_q = Q()
+            spheres_q = Q()
             for i in spheres:
-                mentors_q |= Q(sphere__icontains=i)
-            mentors = mentors.filter(mentors_q)
-
+                spheres_q |= Q(sphere__icontains=i)
+            mentors = mentors.filter(spheres_q)
+            
+        if experiences:
+            experiences_q = Q()
+            for i in range(0, len(experiences), 2):
+                experiences_q |= Q(experience__range=(experiences[i], experiences[i + 1]))
+            mentors = mentors.filter(experiences_q)
 
         for i in prices_str:
             mentors = mentors.exclude(price__icontains=i)
         for i in range(0, len(prices_int), 2):
             mentors = mentors.exclude(price__range=(prices_int[i], prices_int[i + 1]))
-
-        for i in range(0, len(experiences), 2):
-            mentors = mentors.exclude(experience__range=(experiences[i], experiences[i + 1]))
 
     if search_query:
         for i in search_query:
