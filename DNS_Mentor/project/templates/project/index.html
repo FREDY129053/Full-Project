@@ -53,45 +53,45 @@
 
 
         <div class="pop_up" id="pop_up">
-            <div class="inquiry-box">
-                <div class="inquiry-text">
+          <div class="inquiry-box">
+              <div class="inquiry-text">
 
-                    <div class="inquiry-title">
-                        Заполните анкету
-                        <div class="pop_up_close" id="pop_up_close">&#10006</div>
-                    </div>
-                    <div class="inquiry-subtitle">
-                        После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение
-                        в Telegram.
-                    </div>
-                </div>
+                  <div class="inquiry-title">
+                      Заполните анкету
+                      <div class="pop_up_close" id="pop_up_close">&#10006</div>
+                  </div>
+                  <div class="inquiry-subtitle">
+                      После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение
+                      в Telegram.
+                  </div>
+              </div>
+              <form action="{% url 'full' %}" method="post" name="mentor">
+                   {% csrf_token %}
+                  <div class="inquiry-top">
+                      <input type="text" name="first_name" class="field" placeholder="Имя" autocomplete="off">
+                      <input type="text" name="last_name" class="field" placeholder="Фамилия" autocomplete="off">
+                      <input type="email" name="email" class="field" placeholder="Your email" autocomplete="off">
+                      <input type="text" name="telegram" class="field" placeholder="Telegram @" autocomplete="off">
+                      <input type="text" name="price" class="field" placeholder="Цена услуги(в рублях)" autocomplete="off">
+                      <input type="text" name="exp" class="field" placeholder="Опыт работы(начиная с 1, целое число)" autocomplete="off">
+                  </div>
 
-                <div class="inquiry-top">
-                    <input type="text" class="field" placeholder="Имя" autocomplete="off">
-                    <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
-                    <input type="email" class="field" placeholder="Your email" autocomplete="off">
-                    <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
-                    <input type="text" class="field" placeholder="Цена услуги" autocomplete="off">
-                    <input type="text" class="field" placeholder="Опыт работы" autocomplete="off">
-                </div>
+                  <div class="inquiry-bottom">
+                      <input type="text" name="profession" class="field" placeholder="Сферы (перечислите через запятую)">
+                      <input type="text" name="about_me" class="field" placeholder="Расскажите о себе">
 
-                <div class="inquiry-bottom">
-                    <textarea class="field" placeholder="Сферы (перечислите через запятую)"></textarea>
-                    <textarea class="field" placeholder="Расскажите о себе"></textarea>
+                      <label for="images" class="drop-container">
+                          <span class="drop-title">Перетащите фото</span>
+                          или
+                          <input type="file" id="images" accept="image/*">
+                      </label>
 
-                    <label for="images" class="drop-container">
-                        <span class="drop-title">Перетащите фото</span>
-                        или
-                        <input type="file" id="images" accept="image/*" required>
-                    </label>
-
-                    <div class="inquiry-button">
-                        <button class="inquiry-btn">Отправить заявку</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+                      <div class="inquiry-button">
+                          <button class="inquiry-btn" type="submit">Отправить заявку</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
 
     </div>
 
@@ -292,6 +292,7 @@
             нет ответа в течение суток, то ментор получает +0,5 к общему счётчику.
         </div>
     </div>
+
 </div>
 
 <div class="footer" style="background-color: #fcf8f2;">
@@ -303,6 +304,7 @@
     <span style="font-weight: 600; font-size: 5vh; color: #333322;">Удачной встречи!</span>
     <br>
 </div>
+
 <!--    <script src="styles/js/main.js"></script>-->
 <!--    <script src="styles/js/burger.js"></script>-->
 
