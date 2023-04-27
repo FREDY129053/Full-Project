@@ -5,12 +5,9 @@
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-    <!--    <link rel="stylesheet" href="styles/css/styles.css">-->
     <link rel="stylesheet" href="{% static 'styles/css/styles.css' %}">
 
-    <!--    <link rel="stylesheet" href="styles/css/inquiry.css">-->
     <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}">
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,98 +18,76 @@
 </head>
 <body>
 
-
 <header class="header">
     <div class="container">
         <div class="header_inner">
             <div class="header_logo">
-                <!--					<a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>-->
                 <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
             </div>
             <nav class="nav">
                 <a class="nav_link" href="catalog.html">Каталог</a>
                 <a class="nav_link" href="inquiry.html" id="open_pop_up">Стать ментором</a>
             </nav>
-
             <div class="burger-menu">
-
                 <button id="burger">
-                    <!--              <img src="styles/images/menu-icon.svg" alt="">-->
                     <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
                 </button>
-
-
                 <div id="menu" class="burger-slide disp">
                     <a class="nav_link block" href="catalog.html">Каталог</a>
-
                     <a class="nav_link block" href="inquiry.html" id="open_pop_up_burger">Стать ментором</a>
-
                 </div>
             </div>
         </div>
-
-
         <div class="pop_up" id="pop_up">
-          <div class="inquiry-box">
-              <div class="inquiry-text">
+            <div class="inquiry-box">
+                <div class="inquiry-text">
 
-                  <div class="inquiry-title">
-                      Заполните анкету
-                      <div class="pop_up_close" id="pop_up_close">&#10006</div>
-                  </div>
-                  <div class="inquiry-subtitle">
-                      После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение
-                      в Telegram.
-                  </div>
-              </div>
-              <form action="{% url 'full' %}" method="post" name="mentor">
-                   {% csrf_token %}
-                  <div class="inquiry-top">
-                      <input type="text" name="first_name" class="field" placeholder="Имя" autocomplete="off">
-                      <input type="text" name="last_name" class="field" placeholder="Фамилия" autocomplete="off">
-                      <input type="email" name="email" class="field" placeholder="Your email" autocomplete="off">
-                      <input type="text" name="telegram" class="field" placeholder="Telegram @" autocomplete="off">
-                      <input type="text" name="price" class="field" placeholder="Цена услуги(в рублях)" autocomplete="off">
-                      <input type="text" name="exp" class="field" placeholder="Опыт работы(начиная с 1, целое число)" autocomplete="off">
-                  </div>
-
-                  <div class="inquiry-bottom">
-                      <input type="text" name="profession" class="field" placeholder="Сферы (перечислите через запятую)">
-                      <input type="text" name="about_me" class="field" placeholder="Расскажите о себе">
-
-                      <label for="images" class="drop-container">
-                          <span class="drop-title">Перетащите фото</span>
-                          или
-                          <input type="file" id="images" accept="image/*">
-                      </label>
-
-                      <div class="inquiry-button">
-                          <button class="inquiry-btn" type="submit">Отправить заявку</button>
-                      </div>
-                  </div>
-              </form>
-          </div>
-
-    </div>
-
-
+                    <div class="inquiry-title">
+                        Заполните анкету
+                        <div class="pop_up_close" id="pop_up_close">&#10006</div>
+                    </div>
+                    <div class="inquiry-subtitle">
+                        После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение
+                        в Telegram.
+                    </div>
+                </div>
+                <form action="{% url 'home_form' %}" method="post" name="home_form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="inquiry-top">
+                        <input type="text" name="first_name" class="field" placeholder="Имя" autocomplete="off">
+                        <input type="text" name="last_name" class="field" placeholder="Фамилия" autocomplete="off">
+                        <input type="email" name="email" class="field" placeholder="Your email(@<>.com)"
+                               autocomplete="off">
+                        <input type="text" name="telegram" class="field" placeholder="Telegram @" autocomplete="off">
+                        <input type="text" name="price" class="field"
+                               placeholder="Цена услуги(в рублях/бесплатно/по договоренности)" autocomplete="off">
+                        <input type="text" name="exp" class="field" placeholder="Опыт работы(начиная с 1, целое число)"
+                               autocomplete="off">
+                    </div>
+                    <div class="inquiry-bottom">
+                        <input type="text" name="profession" class="field"
+                               placeholder="Сферы (перечислите через запятую)" autocomplete="off">
+                        <input type="text" name="about_me" class="field" placeholder="Расскажите о себе"
+                               autocomplete="off">
+                        <div class="inquiry-button">
+                            <button class="inquiry-btn" type="submit">Отправить заявку</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 </header>
 
 <div class="introduction">
     <div class="container">
         <div class="introduction-holder">
-
             <div class="introduction-image">
-                <!--            <img src="styles/images/introduction-art.svg" alt="">-->
                 <img src="{% static 'styles/images/introduction-art.svg' %}" alt="">
             </div>
-
             <div class="introduction-info">
                 <div class="introduction-logo">
-                    <!--              <img src="styles/images/introduction-logo.svg" alt="">-->
                     <img src="{% static 'styles/images/introduction-logo.svg' %}" alt="">
                 </div>
-
                 <div class="introduction-desc">
                     Добро пожаловать в <span>DNS Mentor</span> - лучший
                     сервис поиска менторов в вашей области!
@@ -124,178 +99,146 @@
                     и готовы поделиться своим опытом и знаниями.
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 
 <div class="tutorial">
     <div class="container">
-
         <div class="tutorial-title">Как найти ментора?</div>
-
         <div class="tutorial-cards">
             <div class="cards-holder">
-
                 <div class="tutorial-card">
-
                     <div class="card-title">
                         <div class="card-number">
                             1
                         </div>
-
                         <div class="card-title-text">
                             Выберите ментора
                         </div>
                     </div>
-
                     <div class="card-image">
-                        <!--                <img class="card-img" src="styles/images/mentor-card.svg">-->
                         <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
                     </div>
-
                     <div class="card-desc">
                         С нами сотрудничают самые разные люди с самыми разными талантами. В DNS Mentor Вы обязательно
                         найдёте себе подходящего наставника.
                     </div>
-
                 </div>
-
                 <div class="tutorial-card">
-
                     <div class="card-title">
                         <div class="card-number">
                             2
                         </div>
-
                         <div class="card-title-text">
                             Оставьте заявку на сайте
                         </div>
                     </div>
-
                     <div class="card-image">
                         <!--                <img class="card-img" src="styles/images/mentor-card.svg">-->
                         <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
                     </div>
-
                     <div class="card-desc">
                         Мы перешлём ее выбранному Вами ментору.
-                        Опишите свои вопросы как можно подробнее - это поможет ментору лучше разобраться в ваших
-                        проблемах.
+                        Мы, как и Вы, надеемся на его быстрый ответ!
                     </div>
-
                 </div>
-
                 <div class="tutorial-card">
-
                     <div class="card-title">
                         <div class="card-number">
                             3
                         </div>
-
                         <div class="card-title-text">
                             Начните занятия
                         </div>
                     </div>
-
                     <div class="card-image">
-                        <!--                <img class="card-img" src="styles/images/mentor-card.svg">-->
                         <img class="card-img" src="{% static 'styles/images/mentor-card.svg' %}">
                     </div>
-
                     <div class="card-desc">
                         Мы перешлём твою заявку ментору. Он оценит задачу и свяжется с тобой, чтобы обсудить детали и
                         выбрать время. Каждый ментор сам определяет стоимость и длительность сессии.
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
-
-
 <div class="faq">
-
     <div class="faq-title">Часто задаваемые вопросы</div>
-
     <div class="faq-block">
         <div class="question">
             <img class="faq_img" src="{% static 'styles/images/free-icon-bulb-1141787.png' %}">
             Как узнать о менторе подробнее?
         </div>
-
         <div class="answer">
             В каталоге у каждого ментора есть своя карточка. Нажав на нее, Вы сможете увидеть подробную информацию о
             менторе.
         </div>
     </div>
-
     <div class="faq-block">
         <div class="question">
             <img class="faq_img" src="{% static 'styles/images/free-icon-bulb-1141787.png' %}">
             Как стать ментором?
         </div>
-
         <div class="answer">
             Сверху слева есть надпись «Стать ментором». Нажав на неё, Вам откроется анкета, заполнив которую у Вас есть
             шанс стать ментором.
         </div>
     </div>
-
+    <div class="faq-block">
+        <div class="question">
+            <img class="faq_img" src="{% static 'styles/images/free-icon-bulb-1141787.png' %}">
+            Как мне разделить свой текст на абзацы в анкете?...
+        </div>
+        <div class="answer">
+            Для того, чтобы сделать новый абзац в тексте, Вам нужно поставить символ "*" везде, где нужен перенос
+            строки.
+        </div>
+    </div>
     <div class="faq-block">
         <div class="question">
             <img class="faq_img" src="{% static 'styles/images/free-icon-bulb-1141787.png' %}">
             Как скоро я попаду в каталог?
         </div>
-
         <div class="answer">
             Модерация работает круглые сутки и ответит на Вашу заявку как можно скорее.
         </div>
     </div>
-
     <div class="faq-block">
         <div class="question">
             <img class="faq_img" src="{% static 'styles/images/free-icon-bulb-1141787.png' %}">
             Как происходит коммуникация между мной и ментором?
         </div>
-
         <div class="answer">
             Вся коммуникация происходит через Телеграм-бота, точнее он даёт Вам понять текущее состояние о Ваших
-            заявках.
+            заявках, а при положительном ответе ментора, он даст Вам его Телеграмм для личной связи.
         </div>
     </div>
-
     <div class="faq-block">
         <div class="question">
             <img class="faq_img" src="{% static 'styles/images/free-icon-bulb-1141787.png' %}">
-            Нет Телеграмма. Что делать?
+            Нет Telegram. Что делать?
         </div>
-
         <div class="answer">
-            Если у Вас нет Телеграма, то бот отправляет информацию на указанную Вами почту. Но настоятельно рекомендуем
-            перед началом работы с сервисом всё-таки перейти в Телеграм-бота и нажать <b>/start</b>.
+            Если у Вас нет Telegram, то настоятельно рекомендуем
+            перед началом работы с сервисом всё-таки перейти в Telegram-бота и нажать <b>/start</b>.(оповещение по
+            почте: will be soon...)
         </div>
     </div>
-
     <div class="faq-block">
         <div class="question">
             <img class="faq_img" src="{% static 'styles/images/free-icon-bulb-1141787.png' %}">
             Что означает количество человек на карточке ментора и как оно считается?
         </div>
-
         <div class="answer">
             Это количество людей, которым ментор помог. После случившееся встречи, на следующий день Вам, как
             пользователю, отправляется сообщение о полезности встречи. Если ответ «Да», то ментору начисляется +1, если
-            нет ответа в течение суток, то ментор получает +0,5 к общему счётчику.
+            нет ответа в течение 12 часов, то ментор получает +0,5 к общему счётчику.
         </div>
     </div>
-
 </div>
-
-<div class="footer" style="background-color: #fcf8f2;">
+<div class="footer" style="background-color: #fcf8f2; padding: 5vh 0 5vh 0; text-align: center;">
     <a href="https://t.me/dns_mentor_bot"
        style="color: #fd890a; text-decoration: none; font-weight: 600; font-size: 4vh;">Telegram bot</a>
     <span style="font-size: 3.5vh; padding: 0 .5vw;">|</span>
@@ -304,10 +247,6 @@
     <span style="font-weight: 600; font-size: 5vh; color: #333322;">Удачной встречи!</span>
     <br>
 </div>
-
-<!--    <script src="styles/js/main.js"></script>-->
-<!--    <script src="styles/js/burger.js"></script>-->
-
 <script src="{% static 'styles/js/main.js' %}"></script>
 <script src="{%static 'styles/js/burger.js' %}"></script>
 </body>

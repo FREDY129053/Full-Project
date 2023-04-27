@@ -28,6 +28,9 @@ class Mentor(models.Model):
     number_of_rescued = models.FloatField()
     about = models.TextField()
 
+    def get_formate_about(self):
+        return self.about.replace('*', '\n')
+
     class Meta:
         db_table = 'mentors'
 

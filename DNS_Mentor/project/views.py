@@ -1,29 +1,35 @@
 import mysql
 
+from PIL import Image
+from io import BytesIO
 from mysql.connector import connect
 from django.shortcuts import render, get_object_or_404
 from .models import Mentor
-from .forms import MentorForm
+from .forms import MentorForm, UserForm
 from django.http import HttpResponse
 from django.db.models import Q
 
-
-# ментор
-def mentor(request, mentor_id):
-    person = get_object_or_404(Mentor, id=mentor_id)
-    return render(request, 'project/mentor.html', {'person': person})
-
-
-# каталог
-def catalog(request):
-    db_config = {
+# global MySQL vars
+db_config = {
         "user": "me",
         "password": "password",
         "host": "193.124.118.138",
         "database": "project",
     }
-    db = mysql.connector.connect(**db_config)
-    cursor = db.cursor(buffered=True)
+db = mysql.connector.connect(**db_config)
+cursor = db.cursor(buffered=True)
+
+
+# ментор
+def mentor(request, mentor_id):
+    person = get_object_or_404(Mentor, id=mentor_id)
+
+    return render(request, 'project/mentor.html', {'person': person})
+
+
+# каталог
+def catalog(request):
+
     cursor.execute("SELECT sphere FROM mentors")
     options = cursor.fetchall()
 
@@ -37,23 +43,66 @@ def catalog(request):
         for j in i:
             temp3.append(j)
 
-    form = MentorForm()
+    form1 = MentorForm()
+    form2 = UserForm()
     if request.method == 'POST':
-        form = MentorForm(request.POST)
-        print(form.is_valid())
-        if form.is_valid():
-            name = form.cleaned_data['first_name']
-            surname = form.cleaned_data['last_name']
-            mail = form.cleaned_data['email']
-            tg = form.cleaned_data['telegram']
-            price = form.cleaned_data['price']
-            exp = int(form.cleaned_data['exp'])
-            sphere = form.cleaned_data['profession']
-            about_mentor = form.cleaned_data['about_me']
+        form1 = MentorForm(request.POST)
+        form2 = UserForm(request.POST)
 
-            # Логика занесения в БД заявки на менторство
+        if form1.is_valid() and form2.is_valid():
+            name = form1.cleaned_data['first_name']
+            surname = form1.cleaned_data['last_name']
+            mail = form1.cleaned_data['email']
+            tg = form1.cleaned_data['telegram'] if '@' in form1.cleaned_data['telegram'] else '@' + form1.cleaned_data['telegram']
+            price = form1.cleaned_data['price']
+            exp = int(form1.cleaned_data['exp'])
+            sphere = form1.cleaned_data['profession']
+            about_mentor = form1.cleaned_data['about_me']
 
-            print(name, surname, mail, tg, price, exp, sphere, about_mentor)
+            user_name = form2.cleaned_data['user_name']
+            user_surname = form2.cleaned_data['user_surname']
+            user_email = form2.cleaned_data['user_email']
+            user_telegram = form2.cleaned_data['user_telegram'] if '@' in form2.cleaned_data['user_telegram'] else '@' + form2.cleaned_data['user_telegram']
+            meet_date = form2.cleaned_data['meeting_date']
+            mentor_tg = form2.cleaned_data['mentor_tg']
+
+            cursor.execute(f"INSERT INTO applications_for_mentoring(surname, name, telegram, mail, price, experience, sphere, about) "
+                           f"VALUES('{surname}', '{name}', '{tg}', '{mail}', '{price}', {exp}, '{sphere}', '{about_mentor}')")
+            db.commit()
+
+            cursor.execute(
+                f"INSERT INTO applications_for_meeting(user_surname, user_name, mentor_telegram, user_telegram, date_of_meeting, user_mail "
+                f"VALUES('{user_surname}', '{user_name}', '{mentor_tg}', '{user_telegram}', '{meet_date}', '{user_email}')")
+            db.commit()
+
+
+
+        else:
+            if form1.is_valid():
+                name = form1.cleaned_data['first_name']
+                surname = form1.cleaned_data['last_name']
+                mail = form1.cleaned_data['email']
+                tg = form1.cleaned_data['telegram'] if '@' in form1.cleaned_data['telegram'] else '@'+form1.cleaned_data['telegram']
+                price = form1.cleaned_data['price']
+                exp = int(form1.cleaned_data['exp'])
+                sphere = form1.cleaned_data['profession']
+                about_mentor = form1.cleaned_data['about_me']
+
+                cursor.execute(f"INSERT INTO applications_for_mentoring(surname, name, telegram, mail, price, experience, sphere, about) "
+                               f"VALUES('{surname}', '{name}', '{tg}', '{mail}', '{price}', {exp}, '{sphere}', '{about_mentor}')")
+                db.commit()
+
+
+            if form2.is_valid():
+                user_name = form2.cleaned_data['user_name']
+                user_surname = form2.cleaned_data['user_surname']
+                user_email = form2.cleaned_data['user_email']
+                user_telegram = form2.cleaned_data['user_telegram'] if '@' in form2.cleaned_data['user_telegram'] else '@'+form2.cleaned_data['user_telegram']
+                meet_date = form2.cleaned_data['meeting_date']
+                mentor_tg = form2.cleaned_data['mentor_tg']
+
+                cursor.execute(f"INSERT INTO applications_for_meeting(user_surname, user_name, mentor_telegram, user_telegram, date_of_meeting, user_mail) VALUES('{user_surname}', '{user_name}', '{mentor_tg}', '{user_telegram}', '{meet_date}', '{user_email}')")
+                db.commit()
 
 
     filters_values = set(temp3)
@@ -108,14 +157,13 @@ def catalog(request):
         prices_str.clear()
         prices_int.clear()
 
-
     if filters_query:
         if spheres:
             spheres_q = Q()
             for i in spheres:
                 spheres_q |= Q(sphere__icontains=i)
             mentors = mentors.filter(spheres_q)
-            
+
         if experiences:
             experiences_q = Q()
             for i in range(0, len(experiences), 2):
@@ -133,31 +181,28 @@ def catalog(request):
                                      Q(mentor_name__icontains=i) |
                                      Q(sphere__icontains=i))
 
-    context = {'mentors': mentors, 'options': filters_values, 'form': form}
+    context = {'mentors': mentors, 'options': filters_values, 'form1': form1, 'form2': form2}
     return render(request, 'project/catalog.html', context)
 
 
 # домашняя страница
 def home(request):
-    return render(request, 'project/index.html')
+    form = MentorForm()
+    if request.method == 'POST':
+        form = MentorForm(request.POST, request.FILES)
+        if form.is_valid():
+            name = form.cleaned_data['first_name']
+            surname = form.cleaned_data['last_name']
+            mail = form.cleaned_data['email']
+            tg = form.cleaned_data['telegram']
+            price = form.cleaned_data['price']
+            exp = int(form.cleaned_data['exp'])
+            sphere = form.cleaned_data['profession']
+            about_mentor = form.cleaned_data['about_me']
 
 
-# временная ссылка на анкету для ментора
-def about(request):
-    return render(request, 'project/a.html')
+            cursor.execute(f"INSERT INTO applications_for_mentoring(surname, name, telegram, mail, price, experience, sphere, about) VALUES('{surname}', '{name}', '{tg}', '{mail}', '{price}', {exp}, '{sphere}', '{about_mentor}')")
+            db.commit()
 
 
-# не рабочая штука с анкетой пользователя
-# def index(request):
-#     if request.method == 'POST':
-#         form = MentorForm(request.POST)
-#         if form.is_valid():
-#             first_name = form.cleaned_data['first_name']
-#             last_name = form.cleaned_data['last_name']
-#             email = form.cleaned_data['email']
-#             telegram = form.cleaned_data['first_name']
-#             profession = form.cleaned_data['profession']
-#             about_me = form.cleaned_data['about_me']
-#         else:
-#             form = MentorForm()
-#         return render(request, 'mentor.html', {'form': form})
+    return render(request, 'project/index.html', {'form': form})
