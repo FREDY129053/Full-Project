@@ -83,7 +83,7 @@ body{
 
 .info-holder{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10%;
 }
 
@@ -177,7 +177,7 @@ body{
 
 .myself{
     font-family: PT Sans;
-    font-size: 5vb;
+    font-size: 4vb;
     font-weight: 700;
     color: #FD890A;
     padding: 1% 4%;
@@ -313,7 +313,7 @@ button{
 }
 
 
-@media (max-width: 950px){
+@media (max-width: 1178px){
 
   .info-holder{
     display: block;
@@ -326,8 +326,8 @@ button{
   }
 
   .image{
-    height: 65%;
-    width: 65%;
+    height: 55%;
+    width: 55%;
   }
 
   .img{
@@ -335,6 +335,7 @@ button{
   }
 
 }
+
 
 /* анкета ментора */
 
