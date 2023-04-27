@@ -1,15 +1,17 @@
 import mysql
 
 from mysql.connector import connect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Mentor
+from .forms import MentorForm
 from django.http import HttpResponse
 from django.db.models import Q
 
 
 # ментор
-def mentor(request):
-    return render(request, 'project/mentor.html')
+def mentor(request, mentor_id):
+    person = get_object_or_404(Mentor, id=mentor_id)
+    return render(request, 'project/mentor.html', {'person': person})
 
 
 # каталог
@@ -34,6 +36,24 @@ def catalog(request):
     for i in temp2:
         for j in i:
             temp3.append(j)
+
+    form = MentorForm()
+    if request.method == 'POST':
+        form = MentorForm(request.POST)
+        print(form.is_valid())
+        if form.is_valid():
+            name = form.cleaned_data['first_name']
+            surname = form.cleaned_data['last_name']
+            mail = form.cleaned_data['email']
+            tg = form.cleaned_data['telegram']
+            price = form.cleaned_data['price']
+            exp = int(form.cleaned_data['exp'])
+            sphere = form.cleaned_data['profession']
+            about_mentor = form.cleaned_data['about_me']
+
+            # Логика занесения в БД заявки на менторство
+
+            print(name, surname, mail, tg, price, exp, sphere, about_mentor)
 
 
     filters_values = set(temp3)
@@ -113,7 +133,7 @@ def catalog(request):
                                      Q(mentor_name__icontains=i) |
                                      Q(sphere__icontains=i))
 
-    context = {'mentors': mentors, 'options': filters_values}
+    context = {'mentors': mentors, 'options': filters_values, 'form': form}
     return render(request, 'project/catalog.html', context)
 
 

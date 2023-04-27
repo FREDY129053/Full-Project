@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Страница ментора</title>
 
-     <link rel="stylesheet" href="styles/css/mentor.css">
-     <!-- <link rel="stylesheet" href="{% static 'styles/css/mentor.css' %}"> -->
+<!--     <link rel="stylesheet" href="styles/css/mentor.css">-->
+      <link rel="stylesheet" href="{% static 'styles/css/mentor.css' %}">
 
-     <link rel="stylesheet" href="styles/css/inquiry.css">
-     <!-- <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}"> -->
+<!--     <link rel="stylesheet" href="styles/css/inquiry.css">-->
+      <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +25,8 @@
 		<div class="container">
 			<div class="header_inner">
 				<div class="header_logo">
-					<a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>
-          <!-- <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>   -->
+<!--					<a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>-->
+           <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
 				</div>
 					<nav class="nav">
 						<a class="nav_link" href="catalog.html">Каталог</a>
@@ -36,8 +36,8 @@
           <div class="burger-menu">
 
             <button id="burger">
-              <img src="styles/images/menu-icon.svg" alt="">
-              <!-- <img src="{% static 'styles/images/menu-icon.svg' %}" alt=""> -->
+<!--              <img src="styles/images/menu-icon.svg" alt="">-->
+               <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
             </button>
 
 
@@ -100,16 +100,16 @@
         <div class="info-left">
 
           <div class="img-mobile">
-            <img class="image" src="styles/images/23oQj0MKQy8.jpg" alt="">
-            <!-- <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt=""> -->
+<!--            <img class="image" src="styles/images/23oQj0MKQy8.jpg" alt="">-->
+             <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt="">
         </div>
 
         <div class="mentor-name">
-            Иванов Илья Сергеевич
+            {{ person.mentor_name}} {{ person.mentor_surname }}
         </div>
 
         <div class="mentor-fields">
-            дизайн, разработка приложений, ебырь твоей мамы, собутыльник твоего деда, поддельник бати
+            {{ person.sphere }}
         </div>
 
         <div class="mentor-stats">
@@ -117,21 +117,21 @@
           <div class="mentor-experience">
 
             Опыт работы:
-            <div class="mentor-exp"> данные из сервера</div>
+            <div class="mentor-exp">&nbsp;{{ person.experience }}</div>
 
           </div>
 
           <div class="mentor-money">
 
             Цена услуги:
-            <div class="mentor-mon"> данные из сервера</div>
+            <div class="mentor-mon">&nbsp;{{ person.price }}</div>
 
           </div>
 
           <div class="mentor-helped">
 
             Получили помощь:
-            <div class="mentor-help"> данные из сервера</div>
+            <div class="mentor-help">&nbsp;{{ person.number_of_rescued }} человек</div>
 
           </div>
 
@@ -180,8 +180,8 @@
         <div class="info-right">
 
         <div class="img">
-            <img class="image" src="styles/images/23oQj0MKQy8.jpg" alt="">
-            <!-- <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt=""> -->
+<!--            <img class="image" src="styles/images/23oQj0MKQy8.jpg" alt="">-->
+             <img class="image" src="{% static 'styles/images/23oQj0MKQy8.jpg' %}" alt="">
         </div>
 
         </div>
@@ -229,10 +229,10 @@
     <br>
 </div>
 
-    <script src="styles/js/main.js"></script>
-    <script src="styles/js/burger.js"></script>
+<!--    <script src="styles/js/main.js"></script>-->
+<!--    <script src="styles/js/burger.js"></script>-->
 
-    <!-- <script src="{% static 'styles/js/main.js' %}"></script>
-    <script src="{%static 'styles/js/burger.js' %}"></script> -->
+    <script src="{% static 'styles/js/main.js' %}"></script>
+    <script src="{%static 'styles/js/burger.js' %}"></script>
 </body>
 </html>

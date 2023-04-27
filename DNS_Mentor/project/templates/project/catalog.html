@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <title>DNS Mentor</title>
 
-<!--       <link rel="stylesheet" href="styles/css/catalog1.css">-->
-     <link rel="stylesheet" href="{% static 'styles\css\catalog1.css' %}">
+    <!--       <link rel="stylesheet" href="styles/css/catalog1.css">-->
+    <link rel="stylesheet" href="{% static 'styles\css\catalog1.css' %}">
 
-<!--       <link rel="stylesheet" href="styles/css/inquiry.css">-->
-     <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}">
+    <!--       <link rel="stylesheet" href="styles/css/inquiry.css">-->
+    <link rel="stylesheet" href="{% static 'styles/css/inquiry.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet">
 
-<!--      <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>-->
-     <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script>
+    <!--      <script type="text/javascript" src="styles/js/multiselect-dropdown.js"></script>-->
+    <script type="text/javascript" src="{% static 'styles/js/multiselect-dropdown.js' %}"></script>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
@@ -25,11 +25,11 @@
 <body>
 
 
-  <header class="header">
+<header class="header">
     <div class="container">
         <div class="header_inner">
             <div class="header_logo">
-<!--                           <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>-->
+                <!--                           <a href="index.html" class="nav_logo"><img src="styles/images/logo.svg"></a>-->
                 <a href="index.html" class="nav_logo"><img src="{% static 'styles/images/logo.svg' %}"></a>
             </div>
             <nav class="nav">
@@ -38,72 +38,71 @@
             </nav>
 
             <div class="burger-menu">
-  
-              <button id="burger">
-<!--                <img src="styles/images/menu-icon.svg" alt="">-->
-                 <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
-              </button>
-  
-  
-              <div id="menu" class="burger-slide disp">
-                <a class="nav_link block" href="catalog.html">Каталог</a>
-                <a class="nav_link block" href="#" id="open_pop_up_burger">Стать ментором</a>
-              </div>
-  
-            </div>
-        </div> 
-        
-        <div class="pop_up" id="pop_up">
-          <div class="inquiry-box">
-              <div class="inquiry-text">
-                
-                <div class="inquiry-title">
-                  Заполните анкету
-                  <div class="pop_up_close" id="pop_up_close">&#10006</div>
-                </div>
-                <div class="inquiry-subtitle">
-                  После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение в Telegram.
-                </div>
-              </div>
-    
-              <div class="inquiry-top">
-                <input type="text" class="field" placeholder="Имя" autocomplete="off">
-                <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
-                <input type="email" class="field" placeholder="Your email" autocomplete="off">
-                <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
-                <input type="text" class="field" placeholder="Цена услуги" autocomplete="off">
-                <input type="text" class="field" placeholder="Опыт работы" autocomplete="off">
-              </div>
-    
-              <div class="inquiry-bottom">
-                <textarea class="field" placeholder="Сферы (перечислите через запятую)"></textarea>
-                <textarea class="field" placeholder="Расскажите о себе"></textarea>
-                
-                <label for="images" class="drop-container">
-                  <span class="drop-title">Перетащите фото</span>
-                  или
-                  <input type="file" id="images" accept="image/*" required>
-                </label>
-    
-              <div class="inquiry-button">
-                <button class="inquiry-btn">Отправить заявку</button>
-              </div>
-    
 
-                
+                <button id="burger">
+                    <!--                <img src="styles/images/menu-icon.svg" alt="">-->
+                    <img src="{% static 'styles/images/menu-icon.svg' %}" alt="">
+                </button>
+
+
+                <div id="menu" class="burger-slide disp">
+                    <a class="nav_link block" href="catalog.html">Каталог</a>
+                    <a class="nav_link block" href="#" id="open_pop_up_burger">Стать ментором</a>
+                </div>
+
             </div>
         </div>
-        
-  
-      </div>
+
+        <div class="pop_up" id="pop_up">
+            <div class="inquiry-box">
+                <div class="inquiry-text">
+
+                    <div class="inquiry-title">
+                        Заполните анкету
+                        <div class="pop_up_close" id="pop_up_close">&#10006</div>
+                    </div>
+                    <div class="inquiry-subtitle">
+                        После отправления запроса мы его тщательно осмотрим. Если он будет принят, Вам придёт оповещение
+                        в Telegram.
+                    </div>
+                </div>
+                <form action="{% url 'full' %}" method="post" name="mentor">
+                     {% csrf_token %}
+                    <div class="inquiry-top">
+                        <input type="text" name="first_name" class="field" placeholder="Имя" autocomplete="off">
+                        <input type="text" name="last_name" class="field" placeholder="Фамилия" autocomplete="off">
+                        <input type="email" name="email" class="field" placeholder="Your email" autocomplete="off">
+                        <input type="text" name="telegram" class="field" placeholder="Telegram @" autocomplete="off">
+                        <input type="text" name="price" class="field" placeholder="Цена услуги(в рублях)" autocomplete="off">
+                        <input type="text" name="exp" class="field" placeholder="Опыт работы(начиная с 1, целое число)" autocomplete="off">
+                    </div>
+
+                    <div class="inquiry-bottom">
+                        <input type="text" name="profession" class="field" placeholder="Сферы (перечислите через запятую)">
+                        <input type="text" name="about_me" class="field" placeholder="Расскажите о себе">
+
+<!--                        <label for="images" class="drop-container">-->
+<!--                            <span class="drop-title">Перетащите фото</span>-->
+<!--                            или-->
+<!--                            <input type="file" id="images" accept="image/*" required>-->
+<!--                        </label>-->
+
+                        <div class="inquiry-button">
+                            <button class="inquiry-btn" type="submit">Отправить заявку</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
     </div>
-  
-    </header>
+
+</header>
 
 <div class="catalog">
     <div class="container">
         <div class="catalog-holder">
-
 
             <div class="catalog-title">Каталог менторов</div>
 
@@ -115,31 +114,34 @@
                 </form>
 
                 <form class="filters">
-<!--                    <ul class="first_filter">-->
-                        <!--            <span class="first_filter">-->
-                        {% csrf_token %}
-                        <!--                {{ form.as_p  }}-->
-                        <!--            </span>-->
-                        <select class="first_filter" name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Сфера'>
-                            {% for option in options %}
-                          <option value="{{ option }}">{{ option }}</option>
-                            {% endfor %}
-                        </select>
+                    <!--                    <ul class="first_filter">-->
+                    <!--            <span class="first_filter">-->
+                    {% csrf_token %}
+                    <!--                {{ form.as_p  }}-->
+                    <!--            </span>-->
+                    <select class="first_filter" name="select" multiple multiselect-search="true"
+                            multiselect-max-items="10" placeholder='Сфера'>
+                        {% for option in options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
 
-                        <select class="second_filter" name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Цена'>
-                          <option value="Undefined">По договорённости</option>
-                          <option value="Free">Бесплатно</option>
-                          <option value="Low">0-2999</option>
-                          <option value="Medium">3000-5999</option>
-                          <option value="High">6000 и более</option>
-                        </select>
+                    <select class="second_filter" name="select" multiple multiselect-search="true"
+                            multiselect-max-items="10" placeholder='Цена'>
+                        <option value="Undefined">По договорённости</option>
+                        <option value="Free">Бесплатно</option>
+                        <option value="Low">0-2999</option>
+                        <option value="Medium">3000-5999</option>
+                        <option value="High">6000 и более</option>
+                    </select>
 
-                        <select class="third_filter" name="select" multiple multiselect-search="true" multiselect-max-items="10" placeholder='Опыт'>
-                          <option value="Junior">1-2 года</option>
-                          <option value="Middle">3-5 лет</option>
-                          <option value="Senior">5+ лет</option>
-                        </select>
-                        <button class="first_filter_btn" type="submit">Применить фильтры</button>
+                    <select class="third_filter" name="select" multiple multiselect-search="true"
+                            multiselect-max-items="10" placeholder='Опыт'>
+                        <option value="Junior">1-2 года</option>
+                        <option value="Middle">3-5 лет</option>
+                        <option value="Senior">5+ лет</option>
+                    </select>
+                    <button class="first_filter_btn" type="submit">Применить фильтры</button>
                 </form>
             </div>
 
@@ -151,9 +153,9 @@
 
                         <div class="person-right">
                             <div class="catalog-person-image">
-                                <a href="mentor.html">
-<!--                                                <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">-->
-                                     <img class="catalog-person-img"
+                                <a href="{% url 'mentor' mentor.id %}">
+                                    <!--                                                <img class="catalog-person-img" src="styles/images/placeholder-cat.jpg">-->
+                                    <img class="catalog-person-img"
                                          src="{% static 'styles/images/placeholder-cat.jpg' %}" alt="">
                                 </a>
 
@@ -190,50 +192,50 @@
                                 </div>
                             </div>
                         </div>
-<!--                        Заявка юзера -->
+                        <!--                        Заявка юзера -->
                         <div class="catalog-button">
-<!--                            СЮДА ЕЕ НАДО!!!! -->
+                            <!--                            СЮДА ЕЕ НАДО!!!! -->
                             <a class="catalog-btn" href="#" id="open_pop_up_a">
-<!--                                            <img class="message" src="styles/images/message.png">-->
-                                 <img class="message" src="{% static 'styles/images/message.png' %}" alt="">
+                                <!--                                            <img class="message" src="styles/images/message.png">-->
+                                <img class="message" src="{% static 'styles/images/message.png' %}" alt="">
                                 <div class="message-text">Оставить заявку</div>
-                            </a>                 
+                            </a>
                         </div>
 
                         <div class="pop_up_a" id="pop_up_a">
-                          <div class="inquiry-box">
-                              <div class="inquiry-text">
-                                
-                                <div class="inquiry-title">
-                                  Заполните анкету
-                                  <div class="pop_up_close_a" id="pop_up_close_a">&#10006</div>
+                            <div class="inquiry-box">
+                                <div class="inquiry-text">
+
+                                    <div class="inquiry-title">
+                                        Заполните анкету
+                                        <div class="pop_up_close_a" id="pop_up_close_a">&#10006</div>
+                                    </div>
+                                    <div class="inquiry-subtitle">
+                                        Надеемся, ментор как можно скорее ответит на ваш запрос. Уведомление придет на
+                                        почту и в Telegram.
+                                    </div>
                                 </div>
-                                <div class="inquiry-subtitle">
-                                  Надеемся, ментор как можно скорее ответит на ваш запрос. Уведомление придет на почту и в Telegram.
+
+                                <div class="inquiry-top">
+                                    <input type="text" class="field" placeholder="Имя" autocomplete="off">
+                                    <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
+                                    <input type="email" class="field" placeholder="Your email" autocomplete="off">
+                                    <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
                                 </div>
-                              </div>
-                    
-                              <div class="inquiry-top">
-                                <input type="text" class="field" placeholder="Имя" autocomplete="off">
-                                <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
-                                <input type="email" class="field" placeholder="Your email" autocomplete="off">
-                                <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
-                              </div>
-                    
-                              <div class="inquiry-bottom">
-                                <div class="inquiry-subtitle">Выберите дату встречи:</div>
-                                <input type="date" id="date" class="date">
-                                    
-                    
-                              <div class="inquiry-button">
-                                <button class="inquiry-btn">Отправить заявку</button>
-                              </div>
-                    
-                
-                                
+
+                                <div class="inquiry-bottom">
+                                    <div class="inquiry-subtitle">Выберите дату встречи:</div>
+                                    <input type="date" id="date" class="date">
+
+
+                                    <div class="inquiry-button">
+                                        <button class="inquiry-btn">Отправить заявку</button>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
-                      </div>
                     </div>
                 </div>
                 {% endfor %}

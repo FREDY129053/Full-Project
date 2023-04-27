@@ -4,9 +4,11 @@ from .models import Mentor
 
 class MentorForm(forms.Form):
     model = Mentor()
-    first_name = forms.CharField(max_length=50)
-    last_name = forms.CharField(max_length=50)
+    first_name = forms.CharField(widget=forms.Textarea)
+    last_name = forms.CharField(widget=forms.Textarea)
     email = forms.EmailField()
-    telegram = forms.CharField(max_length=30)
-    profession = forms.Textarea()
-    about_me = forms.Textarea()
+    telegram = forms.CharField(widget=forms.Textarea)
+    price = forms.CharField(widget=forms.Textarea)
+    exp = forms.CharField(widget=forms.Textarea)
+    profession = forms.CharField(widget=forms.Textarea)
+    about_me = forms.CharField(widget=forms.Textarea)
