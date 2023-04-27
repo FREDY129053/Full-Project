@@ -81,11 +81,11 @@
                         <input type="text" name="profession" class="field" placeholder="Сферы (перечислите через запятую)">
                         <input type="text" name="about_me" class="field" placeholder="Расскажите о себе">
 
-<!--                        <label for="images" class="drop-container">-->
-<!--                            <span class="drop-title">Перетащите фото</span>-->
-<!--                            или-->
-<!--                            <input type="file" id="images" accept="image/*" required>-->
-<!--                        </label>-->
+                        <label for="images" class="drop-container">
+                            <span class="drop-title">Перетащите фото</span>
+                            или
+                            <input type="file" id="images" accept="image/*">
+                        </label>
 
                         <div class="inquiry-button">
                             <button class="inquiry-btn" type="submit">Отправить заявку</button>
@@ -195,17 +195,18 @@
                         <!--                        Заявка юзера -->
                         <div class="catalog-button">
                             <!--                            СЮДА ЕЕ НАДО!!!! -->
-                            <a class="catalog-btn" href="#" id="open_pop_up_a">
+<!--                            <a class="catalog-btn" href="#" id="open_pop_up_a">-->
+                            <button class="catalog-btn" id="open_pop_up_a">
                                 <!--                                            <img class="message" src="styles/images/message.png">-->
                                 <img class="message" src="{% static 'styles/images/message.png' %}" alt="">
                                 <div class="message-text">Оставить заявку</div>
-                            </a>
+<!--                            </a>-->
+                            </button>
                         </div>
 
                         <div class="pop_up_a" id="pop_up_a">
                             <div class="inquiry-box">
                                 <div class="inquiry-text">
-
                                     <div class="inquiry-title">
                                         Заполните анкету
                                         <div class="pop_up_close_a" id="pop_up_close_a">&#10006</div>
@@ -215,24 +216,18 @@
                                         почту и в Telegram.
                                     </div>
                                 </div>
-
                                 <div class="inquiry-top">
                                     <input type="text" class="field" placeholder="Имя" autocomplete="off">
                                     <input type="text" class="field" placeholder="Фамилия" autocomplete="off">
                                     <input type="email" class="field" placeholder="Your email" autocomplete="off">
                                     <input type="text" class="field" placeholder="Telegram @" autocomplete="off">
                                 </div>
-
                                 <div class="inquiry-bottom">
                                     <div class="inquiry-subtitle">Выберите дату встречи:</div>
                                     <input type="date" id="date" class="date">
-
-
                                     <div class="inquiry-button">
                                         <button class="inquiry-btn">Отправить заявку</button>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -243,7 +238,6 @@
         </div>
     </div>
 </div>
-</header>
 
 
 <div class="footer" style="background-color: #fcf8f2;">
